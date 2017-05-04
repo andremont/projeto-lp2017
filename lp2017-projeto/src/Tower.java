@@ -1,7 +1,6 @@
 
-public class Card {
+public class Tower{
 	String name;
-	Rarity rarity;
 	int level;
 	int hitPoints;
 	int damagePoints;
