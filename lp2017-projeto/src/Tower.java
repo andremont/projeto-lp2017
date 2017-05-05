@@ -4,4 +4,5 @@ public class Tower{
 	int level;
 	int hitPoints;
 	int damagePoints;
+	int damagePerSecond;
 }
