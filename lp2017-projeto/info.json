@@ -96,7 +96,7 @@
     "deploy_time": "1 sec",
     "range": "Melee",
     "target": "Ground",
-    "elixir_cost": "1",
+    "cost": "1",
     "summons": "x3",
     "rarity": "Common",
     "levels": [
@@ -186,86 +186,86 @@
     "deploy_time": "1 second",
     "range": "5",
     "target": "Ground",
-    "elixir_cost": "2",
+    "cost": "2",
     "summons": "x1",
     "rarity": "Common",
     "levels": [
       {
         "level": "1",
         "hitpoints": "150",
-        "area_damage": "100",
+        "damage": "100",
         "damage_per_second": "52"
       },
       {
         "level": "2",
         "hitpoints": "165",
-        "area_damage": "110",
+        "damage": "110",
         "damage_per_second": "55"
       },
       {
         "level": "3",
         "hitpoints": "181",
-        "area_damage": "121",
+        "damage": "121",
         "damage_per_second": "63"
       },
       {
         "level": "4",
         "hitpoints": "199",
-        "area_damage": "133",
+        "damage": "133",
         "damage_per_second": "70"
       },
       {
         "level": "5",
         "hitpoints": "219",
-        "area_damage": "146",
+        "damage": "146",
         "damage_per_second": "76"
       },
       {
         "level": "6",
         "hitpoints": "240",
-        "area_damage": "160",
+        "damage": "160",
         "damage_per_second": "84"
       },
       {
         "level": "7",
         "hitpoints": "264",
-        "area_damage": "176",
+        "damage": "176",
         "damage_per_second": "92"
       },
       {
         "level": "8",
         "hitpoints": "289",
-        "area_damage": "193",
+        "damage": "193",
         "damage_per_second": "96"
       },
       {
         "level": "9",
         "hitpoints": "318",
-        "area_damage": "212",
+        "damage": "212",
         "damage_per_second": "111"
       },
       {
         "level": "10",
         "hitpoints": "349",
-        "area_damage": "233",
+        "damage": "233",
         "damage_per_second": "122"
       },
       {
         "level": "11",
         "hitpoints": "384",
-        "area_damage": "256",
+        "damage": "256",
         "damage_per_second": "128"
       },
       {
         "level": "12",
         "hitpoints": "421",
-        "area_damage": "281",
+        "damage": "281",
         "damage_per_second": "147"
       },
       {
         "level": "13",
         "hitpoints": "463",
-        "area_damage": "309",
+        "damage": "309",
         "damage_per_second": "162"
       }
     ]
@@ -537,56 +537,56 @@
     "deploy_time": "1 second",
     "range": "3.5",
     "target": "Air and Ground",
-    "elixir_cost": "5",
+    "cost": "5",
     "summons": "x1",
     "rarity": "Epic",
     "levels": [
       {
         "level": "1",
         "hitpoints": "800",
-        "area_damage": "100",
+        "damage": "100",
         "damage_per_second": "55"
       },
       {
         "level": "2",
         "hitpoints": "880",
-        "area_damage": "110",
+        "damage": "110",
         "damage_per_second": "61"
       },
       {
         "level": "3",
         "hitpoints": "968",
-        "area_damage": "121",
+        "damage": "121",
         "damage_per_second": "67"
       },
       {
         "level": "4",
         "hitpoints": "1,064",
-        "area_damage": "133",
+        "damage": "133",
         "damage_per_second": "73"
       },
       {
         "level": "5",
         "hitpoints": "1,168",
-        "area_damage": "146",
+        "damage": "146",
         "damage_per_second": "81"
       },
       {
         "level": "6",
         "hitpoints": "1,280",
-        "area_damage": "160",
+        "damage": "160",
         "damage_per_second": "88"
       },
       {
         "level": "7",
         "hitpoints": "1,408",
-        "area_damage": "176",
+        "damage": "176",
         "damage_per_second": "97"
       },
       {
         "level": "8",
         "hitpoints": "1,544",
-        "area_damage": "193",
+        "damage": "193",
         "damage_per_second": "107"
       }
     ]
@@ -597,7 +597,7 @@
     "deploy_time": "1 sec",
     "range": "Melee",
     "target": "Ground",
-    "elixir_cost": "5",
+    "cost": "5",
     "summons": "x4",
     "rarity": "Common",
     "levels": [
@@ -696,7 +696,7 @@
         "level": "1",
         "hitpoints": "700",
         "shield_hitpoints": "200",
-        "area_damage": "125",
+        "damage": "125",
         "damage_with_charge": "250",
         "damage_per_second": "83"
       },
@@ -704,7 +704,7 @@
         "level": "2",
         "hitpoints": "770",
         "shield_hitpoints": "220",
-        "area_damage": "137",
+        "damage": "137",
         "damage_with_charge": "274",
         "damage_per_second": "91"
       },
@@ -712,7 +712,7 @@
         "level": "3",
         "hitpoints": "847",
         "shield_hitpoints": "242",
-        "area_damage": "151",
+        "damage": "151",
         "damage_with_charge": "302",
         "damage_per_second": "100"
       },
@@ -720,7 +720,7 @@
         "level": "4",
         "hitpoints": "931",
         "shield_hitpoints": "266",
-        "area_damage": "166",
+        "damage": "166",
         "damage_with_charge": "332",
         "damage_per_second": "110"
       },
@@ -728,7 +728,7 @@
         "level": "5",
         "hitpoints": "1,022",
         "shield_hitpoints": "292",
-        "area_damage": "182",
+        "damage": "182",
         "damage_with_charge": "364",
         "damage_per_second": "121"
       },
@@ -736,7 +736,7 @@
         "level": "6",
         "hitpoints": "1,120",
         "shield_hitpoints": "320",
-        "area_damage": "200",
+        "damage": "200",
         "damage_with_charge": "400",
         "damage_per_second": "133"
       },
@@ -744,7 +744,7 @@
         "level": "7",
         "hitpoints": "1,232",
         "shield_hitpoints": "352",
-        "area_damage": "220",
+        "damage": "220",
         "damage_with_charge": "440",
         "damage_per_second": "146"
       },
@@ -752,7 +752,7 @@
         "level": "8",
         "hitpoints": "1,351",
         "shield_hitpoints": "386",
-        "area_damage": "241",
+        "damage": "241",
         "damage_with_charge": "482",
         "damage_per_second": "160"
       }
@@ -863,31 +863,31 @@
       {
         "level": "1",
         "hitpoints": "216",
-        "area_damage": "140",
+        "damage": "140",
         "damage_per_second": "46"
       },
       {
         "level": "2",
         "hitpoints": "237",
-        "area_damage": "154",
+        "damage": "154",
         "damage_per_second": "51"
       },
       {
         "level": "3",
         "hitpoints": "261",
-        "area_damage": "169",
+        "damage": "169",
         "damage_per_second": "56"
       },
       {
         "level": "4",
         "hitpoints": "287",
-        "area_damage": "186",
+        "damage": "186",
         "damage_per_second": "62"
       },
       {
         "level": "5",
         "hitpoints": "315",
-        "area_damage": "204",
+        "damage": "204",
         "damage_per_second": "68"
       }
     ]
@@ -906,43 +906,73 @@
       {
         "level": "1",
         "hitpoints": "700",
-        "area_damage": "63",
+        "damage": "63",
         "damage_per_second": "42"
       },
       {
         "level": "2",
         "hitpoints": "770",
-        "area_damage": "69",
+        "damage": "69",
         "damage_per_second": "46"
       },
       {
         "level": "3",
         "hitpoints": "847",
-        "area_damage": "76",
+        "damage": "76",
         "damage_per_second": "50"
       },
       {
         "level": "4",
         "hitpoints": "931",
-        "area_damage": "83",
+        "damage": "83",
         "damage_per_second": "55"
       },
       {
         "level": "5",
         "hitpoints": "1,022",
-        "area_damage": "91",
+        "damage": "91",
         "damage_per_second": "60"
       }
     ]
   },
   "golem": {
-    "golem": null,
+    "cost": "8",
+	"hit_speed": "2.5 sec",
+    "speed": "Slow",
+    "deploy_time": "3 sec",
+    "target": "Ground",
+    "rarity": "Epic",
+    "type": "Troop",
     "levels": [
       {
-        "golemite": null
+        "level": "1",
+        "hitpoints": "3,150",
+        "damage": "186",
+        "damage_per_second": "74"
       },
       {
-        "golemite": "2.5 sec"
+        "level": "2",
+        "hitpoints": "3,465",
+        "damage": "204",
+        "damage_per_second": "82"
+      },
+      {
+        "level": "3",
+        "hitpoints": "3,811",
+        "damage": "225",
+        "damage_per_second": "90"
+      },
+      {
+        "level": "4",
+        "hitpoints": "4,189",
+        "damage": "246",
+        "damage_per_second": "98"
+      },
+      {
+        "level": "5",
+        "hitpoints": "4,599",
+        "damage": "270",
+        "damage_per_second": "108"
       }
     ]
   },
@@ -960,67 +990,67 @@
       {
         "level": "1",
         "hitpoints": "340",
-        "area_damage": "130",
+        "damage": "130",
         "damage_per_second": "77"
       },
       {
         "level": "2",
         "hitpoints": "374",
-        "area_damage": "143",
+        "damage": "143",
         "damage_per_second": "84"
       },
       {
         "level": "3",
         "hitpoints": "411",
-        "area_damage": "157",
+        "damage": "157",
         "damage_per_second": "92"
       },
       {
         "level": "4",
         "hitpoints": "452",
-        "area_damage": "172",
+        "damage": "172",
         "damage_per_second": "101"
       },
       {
         "level": "5",
         "hitpoints": "496",
-        "area_damage": "189",
+        "damage": "189",
         "damage_per_second": "111"
       },
       {
         "level": "6",
         "hitpoints": "544",
-        "area_damage": "208",
+        "damage": "208",
         "damage_per_second": "122"
       },
       {
         "level": "7",
         "hitpoints": "598",
-        "area_damage": "228",
+        "damage": "228",
         "damage_per_second": "134"
       },
       {
         "level": "8",
         "hitpoints": "656",
-        "area_damage": "250",
+        "damage": "250",
         "damage_per_second": "147"
       },
       {
         "level": "9",
         "hitpoints": "720",
-        "area_damage": "275",
+        "damage": "275",
         "damage_per_second": "161"
       },
       {
         "level": "10",
         "hitpoints": "792",
-        "area_damage": "302",
+        "damage": "302",
         "damage_per_second": "177"
       },
       {
         "level": "11",
         "hitpoints": "870",
-        "area_damage": "332",
+        "damage": "332",
         "damage_per_second": "195"
       }
     ]
@@ -1031,7 +1061,7 @@
     "deploy_time": "1 sec",
     "range": "Melee",
     "target": "Buildings",
-    "elixir_cost": "4",
+    "cost": "4",
     "count": "x1",
     "rarity": "Rare",
     "type": "Troop",
@@ -1189,7 +1219,7 @@
     "deploy_time": "1 sec",
     "range": "Melee",
     "targets": "Ground",
-    "elixir_cost": "6",
+    "cost": "6",
     "rarity": "Epic",
     "levels": [
       {
@@ -1256,7 +1286,7 @@
     "deploy_time": "3 sec",
     "range": "Melee",
     "target": "Ground",
-    "elixir_cost": "8",
+    "cost": "8",
     "count": "x1",
     "rarity": "Epic",
     "type": "Troop",
@@ -1317,7 +1347,7 @@
     "deploy_time": "1 sec",
     "range": "Melee",
     "targets": "Buildings",
-    "elixir_cost": "5",
+    "cost": "5",
     "rarity": "Epic",
     "levels": [
       {
@@ -1453,7 +1483,7 @@
     "deploy_time": "1sec",
     "range": "2.5",
     "target": "Air & Ground",
-    "elixir_cost": "3",
+    "cost": "3",
     "summons": "x3",
     "rarity": "Common",
     "levels": [
@@ -1543,7 +1573,7 @@
     "deploy_time": "1 second",
     "range": "Melee",
     "target": "Ground",
-    "elixir_cost": "2",
+    "cost": "2",
     "summons": "x1",
     "rarity": "Common",
     "levels": [
@@ -1633,63 +1663,63 @@
     "deploy_time": "1 second",
     "range": "5.5",
     "target": "Air and Ground",
-    "elixir_cost": "5",
+    "cost": "5",
     "summons": "x1",
     "rarity": "Epic",
     "levels": [
       {
         "level": "1",
         "hitpoints": "500",
-        "area_damage": "42",
+        "damage": "42",
         "damage_per_second": "60",
         "skeleton_level": "6"
       },
       {
         "level": "2",
         "hitpoints": "550",
-        "area_damage": "46",
+        "damage": "46",
         "damage_per_second": "65",
         "skeleton_level": "7"
       },
       {
         "level": "3",
         "hitpoints": "605",
-        "area_damage": "50",
+        "damage": "50",
         "damage_per_second": "71",
         "skeleton_level": "8"
       },
       {
         "level": "4",
         "hitpoints": "665",
-        "area_damage": "55",
+        "damage": "55",
         "damage_per_second": "78",
         "skeleton_level": "9"
       },
       {
         "level": "5",
         "hitpoints": "730",
-        "area_damage": "61",
+        "damage": "61",
         "damage_per_second": "87",
         "skeleton_level": "10"
       },
       {
         "level": "6",
         "hitpoints": "800",
-        "area_damage": "67",
+        "damage": "67",
         "damage_per_second": "95",
         "skeleton_level": "11"
       },
       {
         "level": "7",
         "hitpoints": "880",
-        "area_damage": "73",
+        "damage": "73",
         "damage_per_second": "104",
         "skeleton_level": "12"
       },
       {
         "level": "8",
         "hitpoints": "965",
-        "area_damage": "81",
+        "damage": "81",
         "damage_per_second": "115",
         "skeleton_level": "13"
       }
@@ -1701,7 +1731,7 @@
     "deploy_time": "1 second",
     "range": "4",
     "target": "Ground",
-    "elixir_cost": "4",
+    "cost": "4",
     "summons": "x1",
     "rarity": "Rare",
     "levels": [
@@ -1773,7 +1803,7 @@
     "deploy_time": "1sec",
     "range": "6.5",
     "target": "Air and Ground",
-    "elixir_cost": "5",
+    "cost": "5",
     "summons": "x1",
     "rarity": "Rare",
     "levels": [
@@ -1851,74 +1881,74 @@
     "deploy_time": "1 sec",
     "range": "Melee",
     "target": "Ground",
-    "elixir_cost": "4",
+    "cost": "4",
     "summons": "x1",
     "rarity": "Rare",
     "levels": [
       {
         "level": "1",
         "hitpoints": "880",
-        "area_damage": "120",
+        "damage": "120",
         "damage_per_second": "80"
       },
       {
         "level": "2",
         "hitpoints": "968",
-        "area_damage": "132",
+        "damage": "132",
         "damage_per_second": "88"
       },
       {
         "level": "3",
         "hitpoints": "1,064",
-        "area_damage": "145",
+        "damage": "145",
         "damage_per_second": "96"
       },
       {
         "level": "4",
         "hitpoints": "1,170",
-        "area_damage": "159",
+        "damage": "159",
         "damage_per_second": "106"
       },
       {
         "level": "5",
         "hitpoints": "1,284",
-        "area_damage": "175",
+        "damage": "175",
         "damage_per_second": "116"
       },
       {
         "level": "6",
         "hitpoints": "1,408",
-        "area_damage": "192",
+        "damage": "192",
         "damage_per_second": "128"
       },
       {
         "level": "7",
         "hitpoints": "1,548",
-        "area_damage": "211",
+        "damage": "211",
         "damage_per_second": "140"
       },
       {
         "level": "8",
         "hitpoints": "1,698",
-        "area_damage": "231",
+        "damage": "231",
         "damage_per_second": "154"
       },
       {
         "level": "9",
         "hitpoints": "1,865",
-        "area_damage": "254",
+        "damage": "254",
         "damage_per_second": "169"
       },
       {
         "level": "10",
         "hitpoints": "2,050",
-        "area_damage": "279",
+        "damage": "279",
         "damage_per_second": "186"
       },
       {
         "level": "11",
         "hitpoints": "2,252",
-        "area_damage": "307",
+        "damage": "307",
         "damage_per_second": "204"
       }
     ]
@@ -2131,49 +2161,49 @@
       {
         "level": "1",
         "hitpoints": "1300",
-        "area_damage": "200",
+        "damage": "200",
         "damage_per_second": "80"
       },
       {
         "level": "2",
         "hitpoints": "1430",
-        "area_damage": "220",
+        "damage": "220",
         "damage_per_second": "88"
       },
       {
         "level": "3",
         "hitpoints": "1573",
-        "area_damage": "242",
+        "damage": "242",
         "damage_per_second": "96"
       },
       {
         "level": "4",
         "hitpoints": "1729",
-        "area_damage": "266",
+        "damage": "266",
         "damage_per_second": "106"
       },
       {
         "level": "5",
         "hitpoints": "1898",
-        "area_damage": "292",
+        "damage": "292",
         "damage_per_second": "116"
       },
       {
         "level": "6",
         "hitpoints": "2080",
-        "area_damage": "320",
+        "damage": "320",
         "damage_per_second": "128"
       },
       {
         "level": "7",
         "hitpoints": "2288",
-        "area_damage": "352",
+        "damage": "352",
         "damage_per_second": "140"
       },
       {
         "level": "8",
         "hitpoints": "2509",
-        "area_damage": "386",
+        "damage": "386",
         "damage_per_second": "154"
       }
     ]
@@ -2191,67 +2221,67 @@
       {
         "level": "1",
         "hitpoints": "90",
-        "area_damage": "50"
+        "damage": "50"
       },
       {
         "level": "2",
         "hitpoints": "99",
-        "area_damage": "55"
+        "damage": "55"
       },
       {
         "level": "3",
         "hitpoints": "108",
-        "area_damage": "60"
+        "damage": "60"
       },
       {
         "level": "4",
         "hitpoints": "119",
-        "area_damage": "66"
+        "damage": "66"
       },
       {
         "level": "5",
         "hitpoints": "131",
-        "area_damage": "73"
+        "damage": "73"
       },
       {
         "level": "6",
         "hitpoints": "144",
-        "area_damage": "80"
+        "damage": "80"
       },
       {
         "level": "7",
         "hitpoints": "158",
-        "area_damage": "88"
+        "damage": "88"
       },
       {
         "level": "8",
         "hitpoints": "173",
-        "area_damage": "96"
+        "damage": "96"
       },
       {
         "level": "9",
         "hitpoints": "190",
-        "area_damage": "106"
+        "damage": "106"
       },
       {
         "level": "10",
         "hitpoints": "209",
-        "area_damage": "116"
+        "damage": "116"
       },
       {
         "level": "11",
         "hitpoints": "230",
-        "area_damage": "128"
+        "damage": "128"
       },
       {
         "level": "12",
         "hitpoints": "252",
-        "area_damage": "140"
+        "damage": "140"
       },
       {
         "level": "13",
         "hitpoints": "278",
-        "area_damage": "154"
+        "damage": "154"
       }
     ]
   },
@@ -2304,13 +2334,44 @@
     ]
   },
   "lava-hound": {
-    "lava_hound": null,
-    "levels": [
+    "hit_speed": "1.0 sec",
+    "speed": "Medium",
+    "deploy_time": "1 sec",
+    "range": "2",
+    "target": "Ground",
+    "cost": "7",
+    "type": "Troop",
+    "rarity": "Legendary",
+	 "levels": [
       {
-        "lava_pups": null
+        "level": "1",
+        "hitpoints": "3,000",
+        "damage": "45",
+        "damage_per_second": "34"
       },
       {
-        "lava_pups": "1 sec"
+        "level": "2",
+        "hitpoints": "3,300",
+        "damage": "49",
+        "damage_per_second": "37"
+      },
+      {
+        "level": "3",
+        "hitpoints": "3,630",
+        "damage": "54",
+        "damage_per_second": "41"
+      },
+      {
+        "level": "4",
+        "hitpoints": "3,990",
+        "damage": "59",
+        "damage_per_second": "45"
+      },
+      {
+        "level": "5",
+        "hitpoints": "4,380",
+        "damage": "65",
+        "damage_per_second": "50"
       }
     ]
   },
@@ -2396,67 +2457,67 @@
       {
         "level": "1",
         "hitpoints": "43",
-        "area_damage": "80"
+        "damage": "80"
       },
       {
         "level": "2",
         "hitpoints": "47",
-        "area_damage": "88"
+        "damage": "88"
       },
       {
         "level": "3",
         "hitpoints": "52",
-        "area_damage": "96"
+        "damage": "96"
       },
       {
         "level": "4",
         "hitpoints": "57",
-        "area_damage": "106"
+        "damage": "106"
       },
       {
         "level": "5",
         "hitpoints": "62",
-        "area_damage": "116"
+        "damage": "116"
       },
       {
         "level": "6",
         "hitpoints": "68",
-        "area_damage": "128"
+        "damage": "128"
       },
       {
         "level": "7",
         "hitpoints": "75",
-        "area_damage": "140"
+        "damage": "140"
       },
       {
         "level": "8",
         "hitpoints": "82",
-        "area_damage": "154"
+        "damage": "154"
       },
       {
         "level": "9",
         "hitpoints": "91",
-        "area_damage": "169"
+        "damage": "169"
       },
       {
         "level": "10",
         "hitpoints": "100",
-        "area_damage": "186"
+        "damage": "186"
       },
       {
         "level": "11",
         "hitpoints": "110",
-        "area_damage": "204"
+        "damage": "204"
       },
       {
         "level": "12",
         "hitpoints": "120",
-        "area_damage": "224"
+        "damage": "224"
       },
       {
         "level": "13",
         "hitpoints": "132",
-        "area_damage": "247"
+        "damage": "247"
       }
     ]
   },
@@ -2580,67 +2641,67 @@
     "levels": [
       {
         "level": "1",
-        "area_damage": "80",
+        "damage": "80",
         "crown_tower_damage": "32"
       },
       {
         "level": "2",
-        "area_damage": "88",
+        "damage": "88",
         "crown_tower_damage": "36"
       },
       {
         "level": "3",
-        "area_damage": "96",
+        "damage": "96",
         "crown_tower_damage": "39"
       },
       {
         "level": "4",
-        "area_damage": "106",
+        "damage": "106",
         "crown_tower_damage": "43"
       },
       {
         "level": "5",
-        "area_damage": "116",
+        "damage": "116",
         "crown_tower_damage": "47"
       },
       {
         "level": "6",
-        "area_damage": "128",
+        "damage": "128",
         "crown_tower_damage": "52"
       },
       {
         "level": "7",
-        "area_damage": "140",
+        "damage": "140",
         "crown_tower_damage": "56"
       },
       {
         "level": "8",
-        "area_damage": "154",
+        "damage": "154",
         "crown_tower_damage": "62"
       },
       {
         "level": "9",
-        "area_damage": "169",
+        "damage": "169",
         "crown_tower_damage": "68"
       },
       {
         "level": "10",
-        "area_damage": "186",
+        "damage": "186",
         "crown_tower_damage": "75"
       },
       {
         "level": "11",
-        "area_damage": "204",
+        "damage": "204",
         "crown_tower_damage": "82"
       },
       {
         "level": "12",
-        "area_damage": "224",
+        "damage": "224",
         "crown_tower_damage": "90"
       },
       {
         "level": "13",
-        "area_damage": "247",
+        "damage": "247",
         "crown_tower_damage": "99"
       }
     ]
@@ -2687,7 +2748,7 @@
   },
   "rage": {
     "radius": "5",
-    "elixir_cost": "3",
+    "cost": "3",
     "rarity": "Epic",
     "type": "Spell",
     "levels": [
@@ -2727,63 +2788,63 @@
   },
   "rocket": {
     "radius": "2",
-    "elixir_cost": "6",
+    "cost": "6",
     "rarity": "Rare",
     "type": "Spell",
     "levels": [
       {
         "level": "1",
-        "area_damage": "700",
+        "damage": "700",
         "crown_tower_damage": "280"
       },
       {
         "level": "2",
-        "area_damage": "770",
+        "damage": "770",
         "crown_tower_damage": "308"
       },
       {
         "level": "3",
-        "area_damage": "847",
+        "damage": "847",
         "crown_tower_damage": "339"
       },
       {
         "level": "4",
-        "area_damage": "931",
+        "damage": "931",
         "crown_tower_damage": "373"
       },
       {
         "level": "5",
-        "area_damage": "1,022",
+        "damage": "1,022",
         "crown_tower_damage": "409"
       },
       {
         "level": "6",
-        "area_damage": "1,120",
+        "damage": "1,120",
         "crown_tower_damage": "448"
       },
       {
         "level": "7",
-        "area_damage": "1,232",
+        "damage": "1,232",
         "crown_tower_damage": "493"
       },
       {
         "level": "8",
-        "area_damage": "1,351",
+        "damage": "1,351",
         "crown_tower_damage": "541"
       },
       {
         "level": "9",
-        "area_damage": "1,484",
+        "damage": "1,484",
         "crown_tower_damage": "594"
       },
       {
         "level": "10",
-        "area_damage": "1,631",
+        "damage": "1,631",
         "crown_tower_damage": "653"
       },
       {
         "level": "11",
-        "area_damage": "1,792",
+        "damage": "1,792",
         "crown_tower_damage": "717"
       }
     ]
@@ -2791,7 +2852,7 @@
   "goblin-barrel": {
     "radius": "1.5",
     "count": "x3",
-    "elixir_cost": "4",
+    "cost": "4",
     "rarity": "Epic",
     "type": "Spell",
     "levels": [
@@ -2831,58 +2892,58 @@
   },
   "fireball": {
     "radius": "2.5",
-    "elixir_cost": "4",
+    "cost": "4",
     "rarity": "Rare",
     "type": "Spell",
     "levels": [
       {
         "level": "1",
-        "area_damage": "325",
+        "damage": "325",
         "crown_tower_damage": "130"
       },
       {
         "level": "2",
-        "area_damage": "357",
+        "damage": "357",
         "crown_tower_damage": "143"
       },
       {
         "level": "3",
-        "area_damage": "396",
+        "damage": "396",
         "crown_tower_damage": "158"
       },
       {
         "level": "4",
-        "area_damage": "432",
+        "damage": "432",
         "crown_tower_damage": "173"
       },
       {
         "level": "5",
-        "area_damage": "476",
+        "damage": "476",
         "crown_tower_damage": "190"
       },
       {
         "level": "6",
-        "area_damage": "520",
+        "damage": "520",
         "crown_tower_damage": "208"
       },
       {
         "level": "7",
-        "area_damage": "572",
+        "damage": "572",
         "crown_tower_damage": "229"
       },
       {
         "level": "8",
-        "area_damage": "627",
+        "damage": "627",
         "crown_tower_damage": "251"
       },
       {
         "level": "9",
-        "area_damage": "689",
+        "damage": "689",
         "crown_tower_damage": "276"
       },
       {
         "level": "10",
-        "area_damage": "757",
+        "damage": "757",
         "crown_tower_damage": "303"
       }
     ]
@@ -2939,68 +3000,68 @@
   },
   "arrows": {
     "radius": "4",
-    "elixir_cost": "3",
+    "cost": "3",
     "rarity": "Common",
     "type": "Spell",
     "levels": [
       {
         "level": "1",
-        "area_damage": "115",
+        "damage": "115",
         "crown_tower_damage": "46"
       },
       {
         "level": "2",
-        "area_damage": "126",
+        "damage": "126",
         "crown_tower_damage": "51"
       },
       {
         "level": "3",
-        "area_damage": "139",
+        "damage": "139",
         "crown_tower_damage": "56"
       },
       {
         "level": "4",
-        "area_damage": "152",
+        "damage": "152",
         "crown_tower_damage": "61"
       },
       {
         "level": "5",
-        "area_damage": "168",
+        "damage": "168",
         "crown_tower_damage": "67"
       },
       {
         "level": "6",
-        "area_damage": "184",
+        "damage": "184",
         "crown_tower_damage": "74"
       },
       {
         "level": "7",
-        "area_damage": "202",
+        "damage": "202",
         "crown_tower_damage": "81"
       },
       {
         "level": "8",
-        "area_damage": "221",
+        "damage": "221",
         "crown_tower_damage": "89"
       },
       {
         "level": "9",
-        "area_damage": "243",
+        "damage": "243",
         "crown_tower_damage": "98"
       },
       {
         "level": "10",
-        "area_damage": "268",
+        "damage": "268",
         "crown_tower_damage": "107"
       },
       {
         "level": "11",
-        "area_damage": "295",
+        "damage": "295",
         "crown_tower_damage": "118"
       },
       {
         "level": "12",
-        "area_damage": "323",
+        "damage": "323",
         "crown_tower_damage": "130"
       }
     ]
@@ -3018,79 +3079,79 @@
       {
         "level": "1",
         "hitpoints": "600",
-        "area_damage": "108",
+        "damage": "108",
         "damage_per_second": "21"
       },
       {
         "level": "2",
         "hitpoints": "660",
-        "area_damage": "119",
+        "damage": "119",
         "damage_per_second": "23"
       },
       {
         "level": "3",
         "hitpoints": "726",
-        "area_damage": "131",
+        "damage": "131",
         "damage_per_second": "26"
       },
       {
         "level": "4",
         "hitpoints": "798",
-        "area_damage": "145",
+        "damage": "145",
         "damage_per_second": "28"
       },
       {
         "level": "5",
         "hitpoints": "876",
-        "area_damage": "158",
+        "damage": "158",
         "damage_per_second": "31"
       },
       {
         "level": "6",
         "hitpoints": "960",
-        "area_damage": "173",
+        "damage": "173",
         "damage_per_second": "34"
       },
       {
         "level": "7",
         "hitpoints": "1,056",
-        "area_damage": "190",
+        "damage": "190",
         "damage_per_second": "38"
       },
       {
         "level": "8",
         "hitpoints": "1,158",
-        "area_damage": "208",
+        "damage": "208",
         "damage_per_second": "41"
       },
       {
         "level": "9",
         "hitpoints": "1,272",
-        "area_damage": "229",
+        "damage": "229",
         "damage_per_second": "45"
       },
       {
         "level": "10",
         "hitpoints": "1,398",
-        "area_damage": "251",
+        "damage": "251",
         "damage_per_second": "50"
       },
       {
         "level": "11",
         "hitpoints": "1,536",
-        "area_damage": "276",
+        "damage": "276",
         "damage_per_second": "55"
       },
       {
         "level": "12",
         "hitpoints": "1,686",
-        "area_damage": "303",
+        "damage": "303",
         "damage_per_second": "60"
       },
       {
         "level": "13",
         "hitpoints": "1,854",
-        "area_damage": "333",
+        "damage": "333",
         "damage_per_second": "66"
       }
     ]
@@ -3155,7 +3216,7 @@
     "lifetime": "40 sec",
     "range": "11.5",
     "target": "Ground",
-    "elixir_cost": "6",
+    "cost": "6",
     "rarity": "Epic",
     "type": "Building",
     "levels": [
@@ -3215,7 +3276,7 @@
     "lifetime": "30 sec",
     "range": "5.5",
     "target": "Ground",
-    "elixir_cost": "3",
+    "cost": "3",
     "rarity": "Common",
     "type": "Building",
     "levels": [
@@ -3303,7 +3364,7 @@
     "spawn_speed": "14 sec",
     "deploy_time": "1 sec",
     "lifetime": "1 min",
-    "elixir_cost": "7",
+    "cost": "7",
     "rarity": "Rare",
     "type": "Building",
     "levels": [
@@ -3365,7 +3426,7 @@
     "lifetime": "1 min",
     "range": "6.5",
     "target": "Air and Ground",
-    "elixir_cost": "5",
+    "cost": "5",
     "rarity": "Rare",
     "type": "Building",
     "levels": [
@@ -3443,74 +3504,74 @@
     "lifetime": "1 min",
     "range": "6.5",
     "target": "Ground",
-    "elixir_cost": "5",
+    "cost": "5",
     "rarity": "Rare",
     "type": "Building",
     "levels": [
       {
         "level": "1",
         "hitpoints": "900",
-        "area_damage": "100",
+        "damage": "100",
         "damage_per_second": "58"
       },
       {
         "level": "2",
         "hitpoints": "990",
-        "area_damage": "110",
+        "damage": "110",
         "damage_per_second": "65"
       },
       {
         "level": "3",
         "hitpoints": "1,089",
-        "area_damage": "121",
+        "damage": "121",
         "damage_per_second": "71"
       },
       {
         "level": "4",
         "hitpoints": "1,197",
-        "area_damage": "133",
+        "damage": "133",
         "damage_per_second": "78"
       },
       {
         "level": "5",
         "hitpoints": "1,314",
-        "area_damage": "146",
+        "damage": "146",
         "damage_per_second": "86"
       },
       {
         "level": "6",
         "hitpoints": "1,440",
-        "area_damage": "160",
+        "damage": "160",
         "damage_per_second": "94"
       },
       {
         "level": "7",
         "hitpoints": "1,584",
-        "area_damage": "176",
+        "damage": "176",
         "damage_per_second": "103"
       },
       {
         "level": "8",
         "hitpoints": "1,737",
-        "area_damage": "193",
+        "damage": "193",
         "damage_per_second": "120"
       },
       {
         "level": "9",
         "hitpoints": "1,908",
-        "area_damage": "212",
+        "damage": "212",
         "damage_per_second": "125"
       },
       {
         "level": "10",
         "hitpoints": "2,097",
-        "area_damage": "233",
+        "damage": "233",
         "damage_per_second": "145"
       },
       {
         "level": "11",
         "hitpoints": "2,304",
-        "area_damage": "256",
+        "damage": "256",
         "damage_per_second": "160"
       }
     ]
@@ -3519,7 +3580,7 @@
     "spawn_speed": "4.9 sec",
     "deploy_time": "1 sec",
     "lifetime": "1 min",
-    "elixir_cost": "5",
+    "cost": "5",
     "rarity": "Rare",
     "type": "Building",
     "levels": [
@@ -3586,7 +3647,7 @@
     "lifetime": "1 min",
     "range": "6",
     "target": "Air and Ground",
-    "elixir_cost": "4",
+    "cost": "4",
     "rarity": "Common",
     "type": "Building",
     "levels": [
@@ -3676,7 +3737,7 @@
     "deploy_time": "1sec",
     "range": "Melee",
     "target": "Ground",
-    "elixir_cost": "3",
+    "cost": "3",
     "lifetime": "1 minute",
     "rarity": "Rare",
     "levels": [
@@ -3786,31 +3847,31 @@
       {
         "level": "1",
         "hitpoints": "1,200",
-        "area_damage": "1,300",
+        "damage": "1,300",
         "damage_per_second": "260"
       },
       {
         "level": "2",
         "hitpoints": "1,320",
-        "area_damage": "1,430",
+        "damage": "1,430",
         "damage_per_second": "286"
       },
       {
         "level": "3",
         "hitpoints": "1,452",
-        "area_damage": "1,573",
+        "damage": "1,573",
         "damage_per_second": "314"
       },
       {
         "level": "4",
         "hitpoints": "1,596",
-        "area_damage": "1,729",
+        "damage": "1,729",
         "damage_per_second": "345"
       },
       {
         "level": "5",
         "hitpoints": "1,752",
-        "area_damage": "1,898",
+        "damage": "1,898",
         "damage_per_second": "379"
       }
     ]

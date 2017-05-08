@@ -1,24 +1,27 @@
+import javax.json.JsonArray;
 
 public class Card {
 	private String name;
 	private Rarity rarity;
-	private int cost;
+	private String cost;
 	private int level;
-	private int hitPoints;
-	private int damagePoints;
-	private int damagePerSecond;
+	private JsonArray levels;
+	private String type;
 
 	public Card() {
 	}
 	
-	public Card(String name, Rarity rarity, int cost, int level, int hitPoints, int damagePoints, int damagePerSecond) {
+	public Card(String name) {
+		this.name = name;
+	}
+	
+	public Card(String name, Rarity rarity, String cost, JsonArray levels, String type) {
 		this.rarity = rarity;
 		this.cost = cost;
-		this.level = level;
+		this.level = 1;
+		this.levels = levels;
 		this.name = name;
-		this.hitPoints = hitPoints;
-		this.damagePoints = damagePoints;
-		this.damagePerSecond = damagePerSecond;
+		this.type = type;
 	}
 
 	public String getName() {
@@ -37,43 +40,35 @@ public class Card {
 		this.rarity = rarity;
 	}
 
-	public int getCost() {
+	public String getCost() {
 		return cost;
 	}
 
-	public void setCost(int cost) {
+	public void setCost(String cost) {
 		this.cost = cost;
 	}
 
-	public int getLevel() {
-		return level;
+	public JsonArray getLevels() {
+		return this.levels;
+	}
+	
+	public void setLevels(JsonArray levels) {
+		this.levels = levels;
 	}
 
+	public int getLevel() {
+		return this.level;
+	}
+	
 	public void setLevel(int level) {
 		this.level = level;
 	}
 
-	public int getHitPoints() {
-		return hitPoints;
+	public String getType() {
+		return type;
 	}
 
-	public void setHitPoints(int hitPoints) {
-		this.hitPoints = hitPoints;
-	}
-
-	public int getDamagePoints() {
-		return damagePoints;
-	}
-
-	public void setDamagePoints(int damagePoints) {
-		this.damagePoints = damagePoints;
-	}
-
-	public int getDamagePerSecond() {
-		return damagePerSecond;
-	}
-
-	public void setDamagePerSecond(int damagePerSecond) {
-		this.damagePerSecond = damagePerSecond;
+	public void setType(String type) {
+		this.type = type;
 	}
 }
