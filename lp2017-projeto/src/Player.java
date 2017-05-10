@@ -4,8 +4,13 @@ public class Player {
 	private String name;
 	private String level;
 	private ArrayList<Card> deck;
-
+	private ArrayList<Towers> towers;
+	
 	public Player() {
+		
+	}
+	
+	public Player(String name, String level, ArrayList<Card> deck, ArrayList<Towers> towers) {
 		// Criar jogador com parâmetros e baralho aleatório
 	}
 
@@ -31,5 +36,13 @@ public class Player {
 
 	public void setDeck(ArrayList<Card> deck) {
 		this.deck = deck;
+	}
+	
+	public ArrayList<Card> getTowers() {
+		return towers;
+	}
+
+	public void setTowers(ArrayList<Tower> towers) {
+		this.towers = towers;
 	}
 }

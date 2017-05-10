@@ -59,7 +59,7 @@ public class Utils {
 		return cards;
 	}
 	
-	/** Gets all attributes for a given card */
+	/** Gets and sets all attributes for a given card */
 	public static Card setCardAttributes(Card tempCard, JsonArray subCardInfo)
 	{
 		for(int j=0; j < subCardInfo.size(); j++)
@@ -127,4 +127,40 @@ public class Utils {
 
 		return Rarity.Common;
 	}
+	
+	/** Print all cards in deck */
+	public static void printAllCards(ArrayList<Card> cards)
+	{
+		try {
+			for(Card newCard : cards)
+				System.out.println(newCard.getName() + " | Cost:" + newCard.getCost() + " | rarity: " + newCard.getRarity());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+	}
+	
+	/** Saves all cards in deck to a String */
+	public static String getAllCards(ArrayList<Card> cards)
+	{
+		String tempString = "";
+		try {
+			for(Card newCard : cards)
+				tempString += newCard.getName() + " | Cost:" + newCard.getCost() + " | Rarity: " + newCard.getRarity() + "\n";
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		
+		return tempString;
+	}
+
+	/** Validates user credentials */
+	public static boolean validateUser(String user, String password)
+    {    	
+    	/*if (user.equals("admin") && password.equals("password"))
+    		return true;
+    	
+    	return false;*/
+		
+		return true;
+    }
 }
