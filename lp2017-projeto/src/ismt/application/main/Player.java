@@ -4,6 +4,7 @@ import java.util.ArrayList;
 public class Player {
 	private String name;
 	private String level;
+	private int money;
 	private ArrayList<Card> deck;
 	private ArrayList<Card> allCards;
 	private ArrayList<Tower> towers;
@@ -29,6 +30,14 @@ public class Player {
 	}
 
 	public void setLevel(String level) {
+		this.level = level;
+	}
+	
+	public String getMoney() {
+		return level;
+	}
+
+	public void setMoney(String level) {
 		this.level = level;
 	}
 
