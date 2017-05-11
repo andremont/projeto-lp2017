@@ -1,3 +1,4 @@
+package ismt.application.main;
 import javax.json.JsonArray;
 
 public class SpellCard extends Card {

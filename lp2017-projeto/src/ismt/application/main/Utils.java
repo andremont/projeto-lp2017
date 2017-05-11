@@ -1,3 +1,4 @@
+package ismt.application.main;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -131,35 +132,25 @@ public class Utils {
 	/** Print all cards in deck */
 	public static void printAllCards(ArrayList<Card> cards)
 	{
-		try {
 			for(Card newCard : cards)
 				System.out.println(newCard.getName() + " | Cost:" + newCard.getCost() + " | rarity: " + newCard.getRarity());
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
 	}
 	
 	/** Saves all cards in deck to a String */
 	public static String getAllCards(ArrayList<Card> cards)
 	{
 		String tempString = "";
-		try {
-			for(Card newCard : cards)
-				tempString += newCard.getName() + " | Cost:" + newCard.getCost() + " | Rarity: " + newCard.getRarity() + "\n";
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
 		
+		for(Card newCard : cards)
+			tempString += newCard.getName() + " | Cost:" + newCard.getCost() + " | Rarity: " + newCard.getRarity() + "\n";
+
 		return tempString;
 	}
 
 	/** Validates user credentials */
 	public static boolean validateUser(String user, String password)
     {    	
-    	/*if (user.equals("admin") && password.equals("password"))
-    		return true;
-    	
-    	return false;*/
+		// TODO Criar autenticação
 		
 		return true;
     }

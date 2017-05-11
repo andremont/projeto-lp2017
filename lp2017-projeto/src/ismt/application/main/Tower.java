@@ -1,3 +1,4 @@
+package ismt.application.main;
 
 public class Tower{
 	String name;
