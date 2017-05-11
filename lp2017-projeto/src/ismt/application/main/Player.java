@@ -5,6 +5,7 @@ public class Player {
 	private String name;
 	private String level;
 	private ArrayList<Card> deck;
+	private ArrayList<Card> allCards;
 	private ArrayList<Tower> towers;
 	
 	public Player() {
@@ -37,6 +38,14 @@ public class Player {
 
 	public void setDeck(ArrayList<Card> deck) {
 		this.deck = deck;
+	}
+	
+	public ArrayList<Card> getAllCards() {
+		return allCards;
+	}
+
+	public void setAllCards(ArrayList<Card> allCards) {
+		this.allCards = allCards;
 	}
 	
 	public ArrayList<Tower> getTowers() {
