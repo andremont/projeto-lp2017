@@ -1,5 +1,6 @@
 package ismt.application.main;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -147,11 +148,42 @@ public class Utils {
 		return tempString;
 	}
 
-	/** Validates user credentials */
-	public static boolean validateUser(String user, String password)
-    {    	
-		// TODO Criar autenticação
+	/** Validates user credentials 
+	 * @throws IOException */
+	public static boolean validateUser(String username, String password) 
+    { 
+		boolean valid = false;
+		InputStream fileReader = null;
 		
-		return true;
+	    try {
+	    	fileReader = new FileInputStream("users.json");
+			// Create Json reader to read the file in Json format
+			JsonReader jsonReader = Json.createReader(fileReader);
+			JsonObject usersObject = jsonReader.readObject();
+			jsonReader.close();
+
+			if(usersObject != null)
+				if (usersObject.containsKey(username)){
+					JsonValue user = usersObject.get(username);
+					String originalPass = user.asJsonObject().getString("password");
+					
+					if (originalPass.equals(password)) 
+						valid = true;
+				}
+			
+	    } catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally{
+			try {
+				fileReader.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return valid;
     }
 }

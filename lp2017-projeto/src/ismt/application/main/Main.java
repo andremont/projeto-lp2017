@@ -30,7 +30,9 @@ public class Main extends Application implements GameInterface{
 	final int APP_HEIGHT = 600;
 	final int BUTTON_SIZE = 100;
 	final int GAP_SIZE = 10;
-	Scene sceneLogin, sceneMain, scenePlay, sceneViewStats, sceneViewPlayers, sceneViewCards, sceneViewRules, sceneShop; 
+	Scene sceneLogin, sceneMain, scenePlay, 
+		  sceneViewStats, sceneViewPlayers, 
+		  sceneViewCards, sceneViewRules, sceneViewShop; 
 
 	public static void main(String[] args) {
 
@@ -48,7 +50,7 @@ public class Main extends Application implements GameInterface{
 		sceneViewStats = new StatsScene().buildStatsScene(primaryStage, sceneMain);
 		sceneViewCards = new CardsScene().buildCardsScene(primaryStage, sceneMain);
 		sceneViewPlayers = new PlayersScene().buildPlayersScene(primaryStage, sceneMain);
-		sceneShop = new SceneShop().buildShopScene(primaryStage, sceneMain);
+		sceneViewShop = new SceneShop().buildShopScene(primaryStage, sceneMain);
 		sceneViewRules = new RulesScene().buildRulesScene(primaryStage, sceneMain);
 		
 		// Set initial scene for login
@@ -141,12 +143,14 @@ public class Main extends Application implements GameInterface{
 		Button buttonStats = new Button("View stats");
 		Button buttonPlayers = new Button("View players");
 		Button buttonCards = new Button("View cards");
+		Button buttonShop = new Button("View shop");
 		Button buttonRules = new Button("View rules");
 		Button buttonLogout = new Button("Logout");
 		buttonPlay.setMaxWidth(BUTTON_SIZE);
 		buttonCards.setMaxWidth(BUTTON_SIZE);
 		buttonStats.setMaxWidth(BUTTON_SIZE);
 		buttonPlayers.setMaxWidth(BUTTON_SIZE);
+		buttonShop.setMaxWidth(BUTTON_SIZE);
 		buttonRules.setMaxWidth(BUTTON_SIZE);
 		buttonLogout.setMaxWidth(BUTTON_SIZE);
 
@@ -154,7 +158,7 @@ public class Main extends Application implements GameInterface{
 		vbBtn.setAlignment(Pos.BASELINE_CENTER);
 		vbBtn.setSpacing(GAP_SIZE);
 		vbBtn.setPadding(new Insets(0, 20, 10, 20)); 
-		vbBtn.getChildren().addAll(buttonPlay, buttonStats, buttonPlayers, buttonCards, buttonRules, buttonLogout);
+		vbBtn.getChildren().addAll(buttonPlay, buttonStats, buttonPlayers, buttonCards, buttonShop, buttonRules, buttonLogout);
 		grid2.add(vbBtn, 1, 4);
 
 		sceneMain = new Scene(grid2, APP_WIDTH, APP_HEIGHT);
@@ -174,6 +178,8 @@ public class Main extends Application implements GameInterface{
 					primaryStage.setScene(sceneViewPlayers);
 				else if (e.getSource() == buttonCards)
 					primaryStage.setScene(sceneViewCards);
+				else if (e.getSource() == buttonShop)
+					primaryStage.setScene(sceneViewShop);
 				else if (e.getSource() == buttonRules)
 					primaryStage.setScene(sceneViewRules);
 				else

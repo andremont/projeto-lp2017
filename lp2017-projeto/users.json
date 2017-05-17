@@ -1,0 +1,10 @@
+{
+   "admin": {
+	   "id": "1",
+	   "password": "password"
+	},
+	"root": {
+	   "id": "2",
+	   "password": "password2"
+	}
+}
