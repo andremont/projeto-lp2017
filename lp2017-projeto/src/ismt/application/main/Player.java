@@ -33,12 +33,12 @@ public class Player {
 		this.level = level;
 	}
 	
-	public String getMoney() {
-		return level;
+	public int getMoney() {
+		return money;
 	}
 
-	public void setMoney(String level) {
-		this.level = level;
+	public void setMoney(int money) {
+		this.money = money;
 	}
 
 	public ArrayList<Card> getDeck() {
@@ -64,4 +64,5 @@ public class Player {
 	public void setTowers(ArrayList<Tower> towers) {
 		this.towers = towers;
 	}
+
 }
