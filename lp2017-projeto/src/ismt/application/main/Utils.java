@@ -1,22 +1,34 @@
 package ismt.application.main;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import javax.json.Json;
 import javax.json.JsonArray;
+import javax.json.JsonArrayBuilder;
 import javax.json.JsonObject;
+import javax.json.JsonObjectBuilder;
 import javax.json.JsonReader;
 import javax.json.JsonValue;
+import javax.json.JsonWriter;
+import javax.json.JsonWriterFactory;
+import javax.json.stream.JsonGenerator;
 
 public class Utils {
 
-	/** Returns an array of all existing cards */
+	private static final String INFO_JSON = "info.json";
+	private static final String USERS_JSON = "users.json";
+
+	/** Returns an array of all existing cards in the game */
 	public static ArrayList<Card> getAllCards() throws IOException
 	{
 		ArrayList<Card> cards = new ArrayList<Card>();
-		InputStream fileReader = new FileInputStream("info.json");
+		InputStream fileReader = new FileInputStream(INFO_JSON);
 
 		try{
 			// Create Json reader to read the file in Json format
@@ -50,7 +62,7 @@ public class Utils {
 					tempCard.setLevels(subCardInfo);	
 					// Get info about each individual level
 					tempCard = setCardAttributes(tempCard, subCardInfo);
-									
+
 				}
 				cards.add(tempCard);
 			}
@@ -60,7 +72,7 @@ public class Utils {
 		}
 		return cards;
 	}
-	
+
 	/** Gets and sets all attributes for a given card */
 	public static Card setCardAttributes(Card tempCard, JsonArray subCardInfo)
 	{
@@ -69,7 +81,7 @@ public class Utils {
 			JsonValue cardLevelDetails = subCardInfo.getValue("/"+j);
 
 			try	{
-				
+
 				if (tempCard.getType().toLowerCase() == "troop")
 				{
 					TroopCard newCard = new TroopCard(tempCard.getName(), tempCard.getRarity(), tempCard.getCost(), tempCard.getLevels(), tempCard.getType());
@@ -111,7 +123,7 @@ public class Utils {
 							}
 					return newCard;
 				}
-				
+
 			}
 			catch(Exception e){
 				//System.out.println(cardLevelDetails);
@@ -119,7 +131,7 @@ public class Utils {
 		}	
 		return tempCard;
 	}
-	
+
 	/** Converts a String into the respective Enum */
 	public static Rarity getRarity(String rarity)
 	{
@@ -129,34 +141,33 @@ public class Utils {
 
 		return Rarity.Common;
 	}
-	
+
 	/** Print all cards in deck */
 	public static void printAllCards(ArrayList<Card> cards)
 	{
-			for(Card newCard : cards)
-				System.out.println(newCard.getName() + " | Cost:" + newCard.getCost() + " | rarity: " + newCard.getRarity());
+		for(Card newCard : cards)
+			System.out.println(newCard.getName() + " | Cost:" + newCard.getCost() + " | rarity: " + newCard.getRarity());
 	}
-	
+
 	/** Saves all cards in deck to a String */
 	public static String getAllCards(ArrayList<Card> cards)
 	{
 		String tempString = "";
-		
+
 		for(Card newCard : cards)
 			tempString += newCard.getName() + " | Cost:" + newCard.getCost() + " | Rarity: " + newCard.getRarity() + "\n";
 
 		return tempString;
 	}
 
-	/** Validates user credentials 
-	 * @throws IOException */
+	/** Validates user credentials  */
 	public static boolean validateUser(String username, String password) 
-    { 
+	{ 
 		boolean valid = false;
 		InputStream fileReader = null;
-		
-	    try {
-	    	fileReader = new FileInputStream("users.json");
+
+		try {
+			fileReader = new FileInputStream(USERS_JSON);
 			// Create Json reader to read the file in Json format
 			JsonReader jsonReader = Json.createReader(fileReader);
 			JsonObject usersObject = jsonReader.readObject();
@@ -166,12 +177,12 @@ public class Utils {
 				if (usersObject.containsKey(username)){
 					JsonValue user = usersObject.get(username);
 					String originalPass = user.asJsonObject().getString("password");
-					
+
 					if (originalPass.equals(password)) 
 						valid = true;
 				}
-			
-	    } catch (FileNotFoundException e) {
+
+		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -183,7 +194,82 @@ public class Utils {
 				e.printStackTrace();
 			}
 		}
-		
+
 		return valid;
-    }
+	}
+
+	/**
+	 * Saves input user to file, including cards
+	 * @param player
+	 * @return success variable
+	 */
+	public static boolean SaveUser(Player player)
+	{
+		boolean success = false;
+		InputStream fileReader = null;
+
+		try {
+			fileReader = new FileInputStream(USERS_JSON);
+			
+			// Create Json reader to read the file in Json format
+			JsonReader jsonReader = Json.createReader(fileReader);
+			JsonObject usersObject = jsonReader.readObject();
+			jsonReader.close();
+			JsonObjectBuilder usersBuilder = Json.createObjectBuilder();
+			
+			if(usersObject != null)
+				if(usersObject != JsonArray.NULL)
+					usersObject.entrySet().forEach(e -> usersBuilder.add(e.getKey(), e.getValue()));
+
+			// Remove if exists
+			usersBuilder.remove(player.getName());
+			
+			// Add all player's deck cards
+			JsonObjectBuilder userBuilder = Json.createObjectBuilder();
+			userBuilder.add("deck", buildCardsArray(player.getDeck())); 
+			// Add all other cards
+			userBuilder.add("allcards", buildCardsArray(player.getAllCards())); 
+			// Add all player's properties and attributes
+			userBuilder.add("password", player.getPassword())
+					   .add("money", player.getMoney() + "")
+					   .add("level", player.getLevel());
+			
+			usersBuilder.add(player.getName(), userBuilder);
+
+			// Write to file
+			OutputStream os = new FileOutputStream(USERS_JSON);
+			Map<String, Boolean> config = new HashMap<>();
+	        config.put(JsonGenerator.PRETTY_PRINTING, true);
+	        JsonWriterFactory jwf = Json.createWriterFactory(config);
+	        JsonWriter jsonWriter = jwf.createWriter(os);
+	        jsonWriter.writeObject(usersBuilder.build());
+			jsonWriter.close();
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally{
+			success = true;
+		}
+
+		return success;
+	}
+
+	/** Builds an returns an array built in Json */
+	private static JsonArrayBuilder buildCardsArray(ArrayList<Card> cards) {
+		JsonArrayBuilder arrayBuilder = Json.createArrayBuilder();
+		
+		for(Card card : cards){
+			JsonObjectBuilder jpb = Json.createObjectBuilder().
+		            add("name", card.getName()).
+		            add("type", card.getType()).
+		            add("cost", card.getCost()).
+		            add("rarity", card.getRarity().toString()).
+		            add("level", card.getLevel());
+			arrayBuilder.add(jpb);
+		}
+		return arrayBuilder;
+	}
+
 }

@@ -115,7 +115,7 @@ public class Main extends Application implements GameInterface{
 				}
 				else{
 					actiontarget.setFill(Color.FIREBRICK);
-					actiontarget.setText("Wrong credentials" + userName.getText() + "|" + pw.getText());
+					actiontarget.setText("Wrong credentials: " + userName.getText() + "|" + pw.getText());
 				}
 			}
 		});

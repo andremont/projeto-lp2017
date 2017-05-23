@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 public class Player {
 	private String name;
+	private String password;
 	private String level;
 	private int money;
 	private ArrayList<Card> deck;
@@ -15,6 +16,7 @@ public class Player {
 	
 	public Player(String name, String level, ArrayList<Card> deck, ArrayList<Tower> towers) {
 		//TODO Criar jogador com parâmetros e baralho aleatório
+		
 	}
 
 	public String getName() {
@@ -23,6 +25,14 @@ public class Player {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getLevel() {

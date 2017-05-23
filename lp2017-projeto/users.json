@@ -1,10 +1,43 @@
+
 {
-   "admin": {
-	   "id": "1",
-	   "password": "password"
-	},
-	"root": {
-	   "id": "2",
-	   "password": "password2"
-	}
+    "admin": {
+        "password": "teste_pass"
+    },
+    "root": {
+        "deck": [
+            {
+                "name": "teste1",
+                "type": "Spell",
+                "cost": "3",
+                "rarity": "Rare",
+                "level": 2
+            },
+            {
+                "name": "teste2",
+                "type": "Building",
+                "cost": "5",
+                "rarity": "Rare",
+                "level": 3
+            }
+        ],
+        "allcards": [
+            {
+                "name": "teste1",
+                "type": "Spell",
+                "cost": "3",
+                "rarity": "Rare",
+                "level": 2
+            },
+            {
+                "name": "teste2",
+                "type": "Building",
+                "cost": "5",
+                "rarity": "Rare",
+                "level": 3
+            }
+        ],
+        "password": "root",
+        "money": "0",
+        "level": "8"
+    }
 }
