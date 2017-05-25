@@ -1,0 +1,119 @@
+
+{
+	"left_right": {
+        "1": [
+            {
+                "hitpoints": 1400,
+                "damagepoints": 50,
+                "damagepersecond": 62
+            }
+        ],
+        "2": [
+            {
+                "hitpoints": 1512,
+                "damagepoints": 54,
+                "damagepersecond": 67
+            }
+        ],
+        "3": [
+            {
+                "hitpoints": 1624,
+                "damagepoints": 58,
+                "damagepersecond": 72
+            }
+        ],
+        "4": [
+            {
+                "hitpoints": 1750,
+                "damagepoints": 62,
+                "damagepersecond": 77
+            }
+        ],
+        "5": [
+            {
+                "hitpoints": 1890,
+                "damagepoints": 67,
+                "damagepersecond": 83
+            }
+        ],
+        "6": [
+            {
+                "hitpoints": 2030,
+                "damagepoints": 72,
+                "damagepersecond": 90
+            }
+        ],
+        "7": [
+            {
+                "hitpoints": 2184,
+                "damagepoints": 78,
+                "damagepersecond": 97
+            }
+        ],
+        "8": [
+            {
+                "hitpoints": 2352,
+                "damagepoints": 84,
+                "damagepersecond": 105
+            }
+        ]
+  	},
+    "king": {
+        "1": [
+            {
+                "hitpoints": 2400,
+                "damagepoints": 50,
+                "damagepersecond": 50
+            }
+        ],
+        "2": [
+            {
+                "hitpoints": 2568,
+                "damagepoints": 53,
+                "damagepersecond": 53
+            }
+        ],
+        "3": [
+            {
+                "hitpoints": 2736,
+                "damagepoints": 57,
+                "damagepersecond": 57
+            }
+        ],
+        "4": [
+            {
+                "hitpoints": 2904,
+                "damagepoints": 60,
+                "damagepersecond": 60
+            }
+        ],
+        "5": [
+            {
+                "hitpoints": 3096,
+                "damagepoints": 64,
+                "damagepersecond": 64
+            }
+        ],
+        "6": [
+            {
+                "hitpoints": 3312,
+                "damagepoints": 69,
+                "damagepersecond": 69
+            }
+        ],
+        "7": [
+            {
+                "hitpoints": 3528,
+                "damagepoints": 73,
+                "damagepersecond": 73
+            }
+        ],
+        "8": [
+            {
+                "hitpoints": 3768,
+                "damagepoints": 78,
+                "damagepersecond": 78
+            }
+        ]
+  }
+}

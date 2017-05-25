@@ -121,12 +121,12 @@ public class Main extends Application implements GameInterface{
 		});
 		
 		// Set exit button action
-				buttonExit.setOnAction(new EventHandler<ActionEvent>() {
-					@Override
-					public void handle(ActionEvent e) { 
-						primaryStage.close();
-					}
-				});
+		buttonExit.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent e) { 
+				primaryStage.close();
+			}
+		});
 	}
 
 	public void buildMainScene(Stage primaryStage) {

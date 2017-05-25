@@ -23,6 +23,7 @@ public class Utils {
 
 	private static final String INFO_JSON = "info.json";
 	private static final String USERS_JSON = "users.json";
+	private static final String TOWERS_JSON = "towers.json";
 
 	/** Returns an array of all existing cards in the game */
 	public static ArrayList<Card> getAllCards() throws IOException
@@ -199,6 +200,107 @@ public class Utils {
 	}
 
 	/**
+	 * Get user and cards
+	 * @param player name
+	 * @return Player object
+	 */
+	public static Player GetUser(String player)
+	{
+		InputStream fileReader = null;
+		Player newPlayer = new Player();
+
+		try {
+			fileReader = new FileInputStream(USERS_JSON);
+
+			// Create Json reader to read the file in Json format
+			JsonReader jsonReader = Json.createReader(fileReader);
+			JsonObject userObject = jsonReader.readObject().get(player).asJsonObject();
+			jsonReader.close();
+			fileReader.close();
+
+			if(userObject != null)
+				if(userObject != JsonArray.NULL)
+				{
+					newPlayer.setName(player);
+					newPlayer.setLevel(userObject.getString("level"));
+					newPlayer.setMoney(Integer.parseInt(userObject.getString("money")));
+					newPlayer.setDeck(buildCardArrayFromFile("deck", userObject));
+					newPlayer.setAllCards(buildCardArrayFromFile("allcards", userObject));
+					newPlayer.setTowers(getTowers(newPlayer.getLevel()));
+				}
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return newPlayer;
+	}
+
+	private static ArrayList<Tower> getTowers(String level) {
+		ArrayList<Tower> towers = new ArrayList<Tower>(3);
+		Tower leftTower = new Tower();
+		Tower rightTower = new Tower();
+		Tower kingTower = new Tower();
+		InputStream fileReader = null;
+
+		try {
+			fileReader = new FileInputStream(TOWERS_JSON);
+			// Create Json reader to read the file in Json format
+			JsonReader jsonReader = Json.createReader(fileReader);
+			JsonObject userObject = jsonReader.readObject();
+			jsonReader.close();
+			fileReader.close();
+			
+			// Get side towers info
+			JsonObject object = userObject.get("left_right").asJsonObject();
+			JsonObject value = object.get(level).asJsonArray().getJsonObject(0); 
+			
+			leftTower = new Tower("Left", Integer.parseInt(level), value.getInt("hitpoints"), value.getInt("damagepoints"), value.getInt("damagepersecond"));
+			rightTower = new Tower("Right", Integer.parseInt(level), value.getInt("hitpoints"), value.getInt("damagepoints"), value.getInt("damagepersecond"));
+			
+			// Get king tower info
+			object = userObject.get("king").asJsonObject();
+			value = object.get(level).asJsonArray().getJsonObject(0); 
+			kingTower = new Tower("King", Integer.parseInt(level), value.getInt("hitpoints"), value.getInt("damagepoints"), value.getInt("damagepersecond"));
+
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		towers.add(leftTower);
+		towers.add(rightTower);
+		towers.add(kingTower);
+
+		return towers;
+	}
+
+	private static ArrayList<Card> buildCardArrayFromFile(String type, JsonObject userObject) {
+		ArrayList<Card> deck = new ArrayList<Card>();
+		JsonArray deckArray = userObject.getJsonArray(type);
+		
+		// Get each card info
+		for(int i=0; i < deckArray.size(); i++){
+			JsonObject card = deckArray.get(i).asJsonObject();
+			Card tempCard = new Card(card.getString("name"));
+
+			if (card.containsKey("type"))
+				tempCard.setType(card.getString("type"));
+			if (card.containsKey("cost"))
+				tempCard.setCost(card.getString("cost"));
+			if (card.containsKey("rarity"))
+				tempCard.setRarity(getRarity(card.getString("rarity")));
+			if (card.containsKey("level"))
+				tempCard.setLevel(card.getInt("level"));
+			deck.add(tempCard);
+		}
+
+		return deck;
+	}
+
+	/**
 	 * Saves input user to file, including cards
 	 * @param player
 	 * @return success variable
@@ -210,20 +312,21 @@ public class Utils {
 
 		try {
 			fileReader = new FileInputStream(USERS_JSON);
-			
+
 			// Create Json reader to read the file in Json format
 			JsonReader jsonReader = Json.createReader(fileReader);
 			JsonObject usersObject = jsonReader.readObject();
 			jsonReader.close();
+			fileReader.close();
 			JsonObjectBuilder usersBuilder = Json.createObjectBuilder();
-			
+
 			if(usersObject != null)
 				if(usersObject != JsonArray.NULL)
 					usersObject.entrySet().forEach(e -> usersBuilder.add(e.getKey(), e.getValue()));
 
 			// Remove if exists
 			usersBuilder.remove(player.getName());
-			
+
 			// Add all player's deck cards
 			JsonObjectBuilder userBuilder = Json.createObjectBuilder();
 			userBuilder.add("deck", buildCardsArray(player.getDeck())); 
@@ -231,18 +334,18 @@ public class Utils {
 			userBuilder.add("allcards", buildCardsArray(player.getAllCards())); 
 			// Add all player's properties and attributes
 			userBuilder.add("password", player.getPassword())
-					   .add("money", player.getMoney() + "")
-					   .add("level", player.getLevel());
-			
+					.add("money", player.getMoney() + "")
+					.add("level", player.getLevel());
+
 			usersBuilder.add(player.getName(), userBuilder);
 
 			// Write to file
 			OutputStream os = new FileOutputStream(USERS_JSON);
 			Map<String, Boolean> config = new HashMap<>();
-	        config.put(JsonGenerator.PRETTY_PRINTING, true);
-	        JsonWriterFactory jwf = Json.createWriterFactory(config);
-	        JsonWriter jsonWriter = jwf.createWriter(os);
-	        jsonWriter.writeObject(usersBuilder.build());
+			config.put(JsonGenerator.PRETTY_PRINTING, true);
+			JsonWriterFactory jwf = Json.createWriterFactory(config);
+			JsonWriter jsonWriter = jwf.createWriter(os);
+			jsonWriter.writeObject(usersBuilder.build());
 			jsonWriter.close();
 
 		} catch (IOException e) {
@@ -259,14 +362,14 @@ public class Utils {
 	/** Builds an returns an array built in Json */
 	private static JsonArrayBuilder buildCardsArray(ArrayList<Card> cards) {
 		JsonArrayBuilder arrayBuilder = Json.createArrayBuilder();
-		
+
 		for(Card card : cards){
 			JsonObjectBuilder jpb = Json.createObjectBuilder().
-		            add("name", card.getName()).
-		            add("type", card.getType()).
-		            add("cost", card.getCost()).
-		            add("rarity", card.getRarity().toString()).
-		            add("level", card.getLevel());
+					add("name", card.getName()).
+					add("type", card.getType()).
+					add("cost", card.getCost()).
+					add("rarity", card.getRarity().toString()).
+					add("level", card.getLevel());
 			arrayBuilder.add(jpb);
 		}
 		return arrayBuilder;

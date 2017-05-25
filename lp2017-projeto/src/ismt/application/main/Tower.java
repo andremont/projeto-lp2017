@@ -9,6 +9,14 @@ public class Tower{
 
 	public Tower() {
 	}
+	
+	public Tower(String name, int level, int hitPoints, int damagePoints, int damagePerSecond) {
+		this.name = name;
+		this.level = level;
+		this.hitPoints = hitPoints;
+		this.damagePoints = damagePoints;
+		this.damagePerSecond = damagePerSecond;
+	}
 
 	public String getName() {
 		return name;
