@@ -2,7 +2,8 @@
     "admin": {
         "password": "password",
         "money": "1100",
-        "level": "8"
+        "level": "8",
+        "points": "2300"
     },
     "root": {
         "deck": [
@@ -138,6 +139,7 @@
         ],
         "password": "root",
         "money": "1100",
-        "level": "8"
+        "level": "8",
+        "points": "2302"
     }
 }

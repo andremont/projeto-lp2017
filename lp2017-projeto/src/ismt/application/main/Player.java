@@ -5,6 +5,7 @@ public class Player {
 	private String name;
 	private String password;
 	private String level;
+	private String points;
 	private int money;
 	private ArrayList<Card> deck;
 	private ArrayList<Card> allCards;
@@ -43,6 +44,14 @@ public class Player {
 		this.level = level;
 	}
 	
+	public String getPoints() {
+		return points;
+	}
+
+	public void setPoints(String points) {
+		this.points = points;
+	}
+
 	public int getMoney() {
 		return money;
 	}
