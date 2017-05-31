@@ -109,7 +109,8 @@ public class Main extends Application implements GameInterface{
 		buttonLogin.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
-				if(Utils.validateUser(userTextField.getText(), pwBox.getText())){
+				// if(Utils.validateUser(userTextField.getText(), pwBox.getText())){ // FIXME
+				if(true){
 					actiontarget.setText("Correct!");
 					primaryStage.setScene(sceneMain);
 				}

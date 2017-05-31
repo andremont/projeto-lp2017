@@ -24,6 +24,7 @@ public class Utils {
 	private static final String INFO_JSON = "info.json";
 	private static final String USERS_JSON = "users.json";
 	private static final String TOWERS_JSON = "towers.json";
+	private static final String STATS_JSON = "stats.json";
 
 	/** Returns an array of all existing cards in the game */
 	public static ArrayList<Card> getAllCards() throws IOException
@@ -197,6 +198,41 @@ public class Utils {
 		}
 
 		return valid;
+	}
+	
+	/**
+	 * Get user records
+	 * @param player name
+	 * @return Player object
+	 */
+	public static Stats GetUserRecords(String player)
+	{
+		InputStream fileReader = null;
+		Stats stats = new Stats();
+
+		try {
+			fileReader = new FileInputStream(STATS_JSON);
+
+			// Create Json reader to read the file in Json format
+			JsonReader jsonReader = Json.createReader(fileReader);
+			JsonObject userObject = jsonReader.readObject().get(player).asJsonObject();
+			jsonReader.close();
+			fileReader.close();
+
+			if(userObject != null)
+				if(userObject != JsonArray.NULL)
+				{
+					stats.setVictories(Integer.parseInt(userObject.getString("victories")));
+					stats.setDraws(Integer.parseInt(userObject.getString("draws")));
+					stats.setLosses(Integer.parseInt(userObject.getString("losses")));
+				}
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return stats;
 	}
 
 	/**
