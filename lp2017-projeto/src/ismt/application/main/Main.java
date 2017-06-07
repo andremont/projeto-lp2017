@@ -3,6 +3,7 @@ package ismt.application.main;
 import ismt.application.scene.*;
 import static javafx.geometry.HPos.RIGHT;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javafx.application.Application;
@@ -128,6 +129,7 @@ public class Main extends Application implements GameInterface{
 				primaryStage.close();
 			}
 		});
+	
 	}
 
 	public void buildMainScene(Stage primaryStage) {

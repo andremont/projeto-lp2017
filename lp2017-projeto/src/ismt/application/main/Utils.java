@@ -199,7 +199,7 @@ public class Utils {
 
 		return valid;
 	}
-	
+
 	/**
 	 * Get user records
 	 * @param player name
@@ -234,7 +234,12 @@ public class Utils {
 
 		return stats;
 	}
-	
+
+	/**
+	 * 
+	 * @param Player name
+	 * @return Player details
+	 */
 	public static Player GetUser(String player)
 	{
 		InputStream fileReader = null;
@@ -253,17 +258,17 @@ public class Utils {
 				if(userObject != JsonArray.NULL)
 				{
 					newPlayer.setName(player);
-					
+
 					if (userObject.containsKey("level"))
-					newPlayer.setLevel(userObject.getString("level"));
+						newPlayer.setLevel(userObject.getString("level"));
 					if (userObject.containsKey("money"))
-					newPlayer.setMoney(Integer.parseInt(userObject.getString("money")));
+						newPlayer.setMoney(Integer.parseInt(userObject.getString("money")));
 					if (userObject.containsKey("deck"))
-					newPlayer.setDeck(buildCardArrayFromFile("deck", userObject));
+						newPlayer.setDeck(buildCardArrayFromFile("deck", userObject));
 					if (userObject.containsKey("allcards"))
-					newPlayer.setAllCards(buildCardArrayFromFile("allcards", userObject));
+						newPlayer.setAllCards(buildCardArrayFromFile("allcards", userObject));
 					if (userObject.containsKey("level"))
-					newPlayer.setTowers(getTowers(newPlayer.getLevel()));
+						newPlayer.setTowers(getTowers(newPlayer.getLevel()));
 				}
 
 		} catch (IOException e) {
@@ -273,27 +278,15 @@ public class Utils {
 
 		return newPlayer;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	/**
-	 * Get user and cards
-	 * @param player name
-	 * @return Player object
-	 */
-	
 
-	
+	/**
+	 * Get all users
+	 * @return Player array
+	 */
 	public static ArrayList<Player> getAllPlayers() throws IOException
 	{
 		ArrayList<Player> players = new ArrayList<Player>();
 		InputStream fileReader = new FileInputStream(USERS_JSON);
-		
 
 		try{
 			// Create Json reader to read the file in Json format
@@ -302,7 +295,7 @@ public class Utils {
 			fileReader.close();
 			ArrayList<String> playerNames = new ArrayList<String>();
 			playerNames.addAll(playerObject.keySet()); 
-			
+
 			// Get each player info
 			for(int i=0; i < playerNames.size(); i++){
 				String playerName = playerNames.get(i);
@@ -330,14 +323,14 @@ public class Utils {
 			JsonObject userObject = jsonReader.readObject();
 			jsonReader.close();
 			fileReader.close();
-			
+
 			// Get side towers info
 			JsonObject object = userObject.get("left_right").asJsonObject();
 			JsonObject value = object.get(level).asJsonArray().getJsonObject(0); 
-			
+
 			leftTower = new Tower("Left", Integer.parseInt(level), value.getInt("hitpoints"), value.getInt("damagepoints"), value.getInt("damagepersecond"));
 			rightTower = new Tower("Right", Integer.parseInt(level), value.getInt("hitpoints"), value.getInt("damagepoints"), value.getInt("damagepersecond"));
-			
+
 			// Get king tower info
 			object = userObject.get("king").asJsonObject();
 			value = object.get(level).asJsonArray().getJsonObject(0); 
@@ -348,7 +341,7 @@ public class Utils {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		towers.add(leftTower);
 		towers.add(rightTower);
 		towers.add(kingTower);
@@ -356,10 +349,16 @@ public class Utils {
 		return towers;
 	}
 
+	/**
+	 * 
+	 * @param type
+	 * @param userObject
+	 * @return Card array
+	 */
 	private static ArrayList<Card> buildCardArrayFromFile(String type, JsonObject userObject) {
 		ArrayList<Card> deck = new ArrayList<Card>();
 		JsonArray deckArray = userObject.getJsonArray(type);
-		
+
 		// Get each card info
 		for(int i=0; i < deckArray.size(); i++){
 			JsonObject card = deckArray.get(i).asJsonObject();
@@ -413,8 +412,8 @@ public class Utils {
 			userBuilder.add("allcards", buildCardsArray(player.getAllCards())); 
 			// Add all player's properties and attributes
 			userBuilder.add("password", player.getPassword())
-					.add("money", player.getMoney() + "")
-					.add("level", player.getLevel());
+			.add("money", player.getMoney() + "")
+			.add("level", player.getLevel());
 
 			usersBuilder.add(player.getName(), userBuilder);
 

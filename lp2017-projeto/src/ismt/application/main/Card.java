@@ -6,6 +6,7 @@ public class Card {
 	private Rarity rarity;
 	private String cost;
 	private int level;
+	private int coinCost;
 	private JsonArray levels;
 	private String type;
 
@@ -14,6 +15,7 @@ public class Card {
 	
 	public Card(String name) {
 		this.name = name;
+		this.coinCost = 0;
 	}
 	
 	public Card(String name, Rarity rarity, String cost, JsonArray levels, String type) {
@@ -23,6 +25,7 @@ public class Card {
 		this.levels = levels;
 		this.name = name;
 		this.type = type;
+		this.coinCost = 0;
 	}
 
 	public String getName() {
@@ -53,6 +56,14 @@ public class Card {
 		return this.levels;
 	}
 	
+	public int getCoinCost() {
+		return coinCost;
+	}
+
+	public void setCoinCost(int coinCost) {
+		this.coinCost = coinCost;
+	}
+
 	public void setLevels(JsonArray levels) {
 		this.levels = levels;
 	}
