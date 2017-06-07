@@ -7,6 +7,7 @@ public class Card {
 	private String cost;
 	private int level;
 	private int coinCost;
+	private int quantity;
 	private JsonArray levels;
 	private String type;
 
@@ -62,6 +63,14 @@ public class Card {
 
 	public void setCoinCost(int coinCost) {
 		this.coinCost = coinCost;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 
 	public void setLevels(JsonArray levels) {

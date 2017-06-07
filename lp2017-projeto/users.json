@@ -1,10 +1,4 @@
 {
-    "admin": {
-        "password": "password",
-        "money": "1100",
-        "level": "8",
-        "points": "2300"
-    },
     "root": {
         "deck": [
             {
@@ -12,128 +6,147 @@
                 "type": "Troop",
                 "cost": "6",
                 "rarity": "Rare",
-                "level": 2
+                "level": 2,
+                "quantity":1
             },
             {
                 "name": "barbarian-hut",
                 "type": "Building",
                 "cost": "7",
                 "rarity": "Rare",
-                "level": 3
+                "level": 3,
+                "quantity":1
             },
             {
                 "name": "minion-horde",
                 "type": "Troop",
                 "cost": "5",
                 "rarity": "Common",
-                "level": 2
+                "level": 2,
+                "quantity":1
             },
             {
                 "name": "princess",
                 "type": "Troop",
                 "cost": "3",
                 "rarity": "Legendary",
-                "level": 3
+                "level": 3,
+                "quantity":1
             },
             {
                 "name": "ice-wizard",
                 "type": "Troop",
                 "cost": "3",
                 "rarity": "Legendary",
-                "level": 1
+                "level": 1,
+                "quantity":1
             },
             {
                 "name": "cannon",
                 "type": "Building",
                 "cost": "3",
                 "rarity": "Common",
-                "level": 3
+                "level": 3,
+                "quantity":1
             },
             {
                 "name": "barbarian-hut",
                 "type": "Building",
                 "cost": "7",
                 "rarity": "Rare",
-                "level": 3
+                "level": 3,
+                "quantity":1
             },
             {
                 "name": "ice-spirit",
                 "type": "Troop",
                 "cost": "1",
                 "rarity": "Common",
-                "level": 11
+                "level": 11,
+                "quantity":1
             }
         ],
+        
         "allcards": [
             {
                 "name": "royal-giant",
                 "type": "Troop",
                 "cost": "6",
                 "rarity": "Rare",
-                "level": 2
+                "level": 2,
+                "quantity":1
             },
             {
                 "name": "barbarian-hut",
                 "type": "Building",
                 "cost": "7",
                 "rarity": "Rare",
-                "level": 3
+                "level": 3,
+                "quantity":1
             },
             {
                 "name": "minion-horde",
                 "type": "Troop",
                 "cost": "5",
                 "rarity": "Common",
-                "level": 2
+                "level": 2,
+                "quantity":1
             },
             {
                 "name": "princess",
                 "type": "Troop",
                 "cost": "3",
                 "rarity": "Legendary",
-                "level": 3
+                "level": 3,
+                "quantity":1
             },
             {
                 "name": "ice-wizard",
                 "type": "Troop",
                 "cost": "3",
                 "rarity": "Legendary",
-                "level": 1
+                "level": 1,
+                "quantity":1
             },
             {
                 "name": "golem",
                 "type": "Troop",
                 "cost": "8",
                 "rarity": "Epic",
-                "level": 1
+                "level": 1,
+                "quantity":1
             },
             {
                 "name": "wizard",
                 "type": "Troop",
                 "cost": "5",
                 "rarity": "Rare",
-                "level": 6
+                "level": 6,
+                "quantity":1
             },
             {
                 "name": "cannon",
                 "type": "Building",
                 "cost": "3",
                 "rarity": "Common",
-                "level": 3
+                "level": 3,
+                "quantity":1
             },
             {
                 "name": "barbarian-hut",
                 "type": "Building",
                 "cost": "7",
                 "rarity": "Rare",
-                "level": 3
+                "level": 3,
+                "quantity":1
             },
             {
                 "name": "ice-spirit",
                 "type": "Troop",
                 "cost": "1",
                 "rarity": "Common",
-                "level": 11
+                "level": 11,
+                "quantity":1
             }
             
         ],
@@ -141,5 +154,162 @@
         "money": "1100",
         "level": "8",
         "points": "2302"
+    },
+    
+     "PauloPais": {
+        "deck": [
+            {
+                "name": "royal-giant",
+                "type": "Troop",
+                "cost": "6",
+                "rarity": "Rare",
+                "level": 2,
+                "quantity":1
+            },
+           {
+                "name": "royal-giant",
+                "type": "Troop",
+                "cost": "6",
+                "rarity": "Rare",
+                "level": 2,
+                "quantity":1
+            },
+            {
+                "name": "minion-horde",
+                "type": "Troop",
+                "cost": "5",
+                "rarity": "Common",
+                "level": 2,
+                "quantity":1
+            },
+            {
+                "name": "princess",
+                "type": "Troop",
+                "cost": "3",
+                "rarity": "Legendary",
+                "level": 3,
+                "quantity":1
+            },
+            {
+                "name": "ice-wizard",
+                "type": "Troop",
+                "cost": "3",
+                "rarity": "Legendary",
+                "level": 1,
+                "quantity":1
+            },
+            {
+                "name": "cannon",
+                "type": "Building",
+                "cost": "3",
+                "rarity": "Common",
+                "level": 3,
+                "quantity":1
+            },
+            {
+                "name": "barbarian-hut",
+                "type": "Building",
+                "cost": "7",
+                "rarity": "Rare",
+                "level": 3,
+                "quantity":1
+            },
+            {
+                "name": "ice-spirit",
+                "type": "Troop",
+                "cost": "1",
+                "rarity": "Common",
+                "level": 11,
+                "quantity":1
+            }
+        ],
+        
+        "allcards": [
+            {
+                "name": "royal-giant",
+                "type": "Troop",
+                "cost": "6",
+                "rarity": "Rare",
+                "level": 2,
+                "quantity":1
+            },
+            {
+                "name": "barbarian-hut",
+                "type": "Building",
+                "cost": "7",
+                "rarity": "Rare",
+                "level": 3,
+                "quantity":1
+            },
+            {
+                "name": "minion-horde",
+                "type": "Troop",
+                "cost": "5",
+                "rarity": "Common",
+                "level": 2,
+                "quantity":1
+            },
+            {
+                "name": "princess",
+                "type": "Troop",
+                "cost": "3",
+                "rarity": "Legendary",
+                "level": 3,
+                "quantity":1
+            },
+            {
+                "name": "ice-wizard",
+                "type": "Troop",
+                "cost": "3",
+                "rarity": "Legendary",
+                "level": 1,
+                "quantity":1
+            },
+            {
+                "name": "golem",
+                "type": "Troop",
+                "cost": "8",
+                "rarity": "Epic",
+                "level": 1,
+                "quantity":1
+            },
+            {
+                "name": "wizard",
+                "type": "Troop",
+                "cost": "5",
+                "rarity": "Rare",
+                "level": 6,
+                "quantity":1
+            },
+            {
+                "name": "cannon",
+                "type": "Building",
+                "cost": "3",
+                "rarity": "Common",
+                "level": 3,
+                "quantity":1
+            },
+            {
+                "name": "barbarian-hut",
+                "type": "Building",
+                "cost": "7",
+                "rarity": "Rare",
+                "level": 3,
+                "quantity":1
+            },
+            {
+                "name": "ice-spirit",
+                "type": "Troop",
+                "cost": "1",
+                "rarity": "Common",
+                "level": 11,
+                "quantity":1
+            }
+            
+        ],
+        "password": "pp",
+        "money": "11100",
+        "level": "88",
+        "points": "23020"
     }
 }

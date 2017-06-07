@@ -54,6 +54,8 @@ public class Utils {
 					tempCard.setCost(card.getString("cost"));
 				if (card.containsKey("rarity"))
 					tempCard.setRarity(getRarity(card.getString("rarity")));
+				if (card.containsKey("quantity"))
+					tempCard.setQuantity(card.getInt("quantity"));
 				if (card.containsKey("levels"))
 				{
 					// Set initial level to 1

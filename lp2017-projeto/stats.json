@@ -8,5 +8,10 @@
     	"victories": "11",
         "draws": "2",
         "losses": "22"
+    },
+    "PauloPais": {
+    	"victories": "300",
+        "draws": "0",
+        "losses": "0"
     }
 }
