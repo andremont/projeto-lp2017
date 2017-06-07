@@ -235,11 +235,8 @@ public class Utils {
 		return stats;
 	}
 
-	/**
-	 * Get user and cards
-	 * @param player name
-	 * @return Player object
-	 */
+
+	
 	public static Player GetUser(String player)
 	{
 		InputStream fileReader = null;
@@ -258,10 +255,16 @@ public class Utils {
 				if(userObject != JsonArray.NULL)
 				{
 					newPlayer.setName(player);
+					
+					if (userObject.containsKey("level"))
 					newPlayer.setLevel(userObject.getString("level"));
+					if (userObject.containsKey("money"))
 					newPlayer.setMoney(Integer.parseInt(userObject.getString("money")));
+					if (userObject.containsKey("deck"))
 					newPlayer.setDeck(buildCardArrayFromFile("deck", userObject));
+					if (userObject.containsKey("allcards"))
 					newPlayer.setAllCards(buildCardArrayFromFile("allcards", userObject));
+					if (userObject.containsKey("level"))
 					newPlayer.setTowers(getTowers(newPlayer.getLevel()));
 				}
 
@@ -272,6 +275,48 @@ public class Utils {
 
 		return newPlayer;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	/**
+	 * Get user and cards
+	 * @param player name
+	 * @return Player object
+	 */
+	
+
+	
+	public static ArrayList<Player> getAllPlayers() throws IOException
+	{
+		ArrayList<Player> players = new ArrayList<Player>();
+		InputStream fileReader = new FileInputStream(USERS_JSON);
+		
+
+		try{
+			// Create Json reader to read the file in Json format
+			JsonReader jsonReader = Json.createReader(fileReader);
+			JsonObject playerObject = jsonReader.readObject();
+			fileReader.close();
+			ArrayList<String> playerNames = new ArrayList<String>();
+			playerNames.addAll(playerObject.keySet()); 
+			
+			// Get each player info
+			for(int i=0; i < playerNames.size(); i++){
+				String playerName = playerNames.get(i);
+				players.add(GetUser(playerName));
+			}
+		}
+		finally{
+			fileReader.close();
+		}
+		return players;
+	}
+
 
 	private static ArrayList<Tower> getTowers(String level) {
 		ArrayList<Tower> towers = new ArrayList<Tower>(3);
