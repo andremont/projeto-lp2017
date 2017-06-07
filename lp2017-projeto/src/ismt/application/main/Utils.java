@@ -234,8 +234,6 @@ public class Utils {
 
 		return stats;
 	}
-
-
 	
 	public static Player GetUser(String player)
 	{
