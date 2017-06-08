@@ -5,6 +5,8 @@ import static javafx.geometry.HPos.RIGHT;
 
 import java.util.ArrayList;
 
+import javax.swing.JFrame;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -32,7 +34,7 @@ public class Main extends Application implements GameInterface{
 	final int GAP_SIZE = 10;
 	Scene sceneLogin, sceneMain, scenePlay, 
 		  sceneViewStats, sceneViewPlayers, 
-		  sceneViewCards, sceneViewRules, sceneViewShop; 
+		  sceneViewCards, sceneViewRules, sceneViewShop, sceneIndividualCard; 
 
 	public static void main(String[] args) {
 
@@ -177,8 +179,11 @@ public class Main extends Application implements GameInterface{
 					primaryStage.setScene(sceneViewStats);
 				else if (e.getSource() == buttonPlayers)
 					primaryStage.setScene(sceneViewPlayers);
-				else if (e.getSource() == buttonCards)
+				else if (e.getSource() == buttonCards){
+//					SceneCard frame = new SceneCard();
+//					frame.setVisible(true);
 					primaryStage.setScene(sceneViewCards);
+				}					
 				else if (e.getSource() == buttonShop)
 					primaryStage.setScene(sceneViewShop);
 				else if (e.getSource() == buttonRules)

@@ -14,8 +14,8 @@ public class SpellCard extends Card {
 		// TODO Auto-generated constructor stub
 	}
 
-	public SpellCard(String name, Rarity rarity, String cost, JsonArray levels, String type) {
-		super(name, rarity, cost, levels, type);
+	public SpellCard(String name, Rarity rarity, String cost, JsonArray levels, String type, String image) {
+		super(name, rarity, cost, levels, type, image);
 		// TODO Auto-generated constructor stub
 	}
 

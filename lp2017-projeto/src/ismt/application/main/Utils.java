@@ -52,6 +52,8 @@ public class Utils {
 					tempCard.setType(card.getString("type"));
 				if (card.containsKey("cost"))
 					tempCard.setCost(card.getString("cost"));
+				if (card.containsKey("image"))
+					tempCard.setImage(card.getString("image"));	
 				if (card.containsKey("rarity"))
 					tempCard.setRarity(getRarity(card.getString("rarity")));
 				if (card.containsKey("levels"))
@@ -76,6 +78,57 @@ public class Utils {
 	}
 
 	/** Gets and sets all attributes for a given card */
+	
+	public static CardLevel setCardLevel(Card tempCard){
+		if(tempCard.getType().toLowerCase().equals("building")){
+			CardBuildingLevel cardLevel = new CardBuildingLevel();
+			int level=tempCard.getLevel();
+			JsonArray jsonLevel = tempCard.getLevels();
+			JsonObject jsonObj = jsonLevel.get(level-1).asJsonObject();
+			cardLevel.setLevel(level);
+			cardLevel.setHitPoints(Integer.parseInt(jsonObj.getString("hitpoints").replace(",", "")));
+			if((jsonObj.containsKey("damage"))&&(jsonObj.containsKey("damage_per_second"))){
+				cardLevel.setDamagePoints(Integer.parseInt(jsonObj.getString("damage").replace(",", "")));
+				cardLevel.setDamagePerSecond(Integer.parseInt(jsonObj.getString("damage_per_second").replace(",", "")));
+			}else{
+				cardLevel.setDamagePoints(0);
+				cardLevel.setDamagePerSecond(0);
+			}
+			return cardLevel;
+		}else{
+			if(tempCard.getType().toLowerCase().equals("spell")){
+				CardSpellLevel cardLevel = new CardSpellLevel();
+				int level=tempCard.getLevel();
+				JsonArray jsonLevel = tempCard.getLevels();
+				JsonObject jsonObj = jsonLevel.get(level-1).asJsonObject();
+				cardLevel.setLevel(level);
+				if((jsonObj.containsKey("damage"))&&(jsonObj.containsKey("crown_tower_damage"))){
+					cardLevel.setDamagePoints(Integer.parseInt(jsonObj.getString("damage").replace(",", "")));
+					cardLevel.setCrownTowerDamage(Integer.parseInt(jsonObj.getString("crown_tower_damage").replace(",", "")));
+				}else{
+					cardLevel.setDamagePoints(0);
+					cardLevel.setCrownTowerDamage(0);
+				}
+				return cardLevel;
+			}else{
+				CardTroopLevel cardLevel = new CardTroopLevel();
+				int level=tempCard.getLevel();
+				JsonArray jsonLevel = tempCard.getLevels();
+				JsonObject jsonObj = jsonLevel.get(level-1).asJsonObject();
+				cardLevel.setHitPoints(Integer.parseInt(jsonObj.getString("hitpoints").replace(",", "")));
+				if((jsonObj.containsKey("damage"))&&(jsonObj.containsKey("damage_per_second"))){
+					cardLevel.setDamagePoints(Integer.parseInt(jsonObj.getString("damage").replace(",", "")));
+					cardLevel.setDamagePerSecond(Integer.parseInt(jsonObj.getString("damage_per_second").replace(",", "")));
+				}else{
+					cardLevel.setDamagePoints(0);
+					cardLevel.setDamagePerSecond(0);
+				}
+				cardLevel.setLevel(level);
+				return cardLevel;
+			}
+		}		
+	}
+	
 	public static Card setCardAttributes(Card tempCard, JsonArray subCardInfo)
 	{
 		for(int j=0; j < subCardInfo.size(); j++)
@@ -86,7 +139,7 @@ public class Utils {
 
 				if (tempCard.getType().toLowerCase() == "troop")
 				{
-					TroopCard newCard = new TroopCard(tempCard.getName(), tempCard.getRarity(), tempCard.getCost(), tempCard.getLevels(), tempCard.getType());
+					TroopCard newCard = new TroopCard(tempCard.getName(), tempCard.getRarity(), tempCard.getCost(), tempCard.getLevels(), tempCard.getType(), tempCard.getImage());
 					if (cardLevelDetails != JsonValue.NULL )
 						if (!cardLevelDetails.asJsonObject().isNull("hitpoints"))
 							if(cardLevelDetails.asJsonObject().containsKey("hitpoints"))
@@ -101,7 +154,7 @@ public class Utils {
 				}
 				else if (tempCard.getType().toLowerCase() == "building")
 				{
-					BuildingCard newCard = new BuildingCard(tempCard.getName(), tempCard.getRarity(), tempCard.getCost(), tempCard.getLevels(), tempCard.getType());
+					BuildingCard newCard = new BuildingCard(tempCard.getName(), tempCard.getRarity(), tempCard.getCost(), tempCard.getLevels(), tempCard.getType(),tempCard.getImage());
 					if (cardLevelDetails != JsonValue.NULL )
 						if (!cardLevelDetails.asJsonObject().isNull("deploy_time"))
 							if(cardLevelDetails.asJsonObject().containsKey("deploy_time"))
@@ -114,7 +167,7 @@ public class Utils {
 				}
 				else if (tempCard.getType().toLowerCase() == "spell")
 				{
-					SpellCard newCard = new SpellCard(tempCard.getName(), tempCard.getRarity(), tempCard.getCost(), tempCard.getLevels(), tempCard.getType());
+					SpellCard newCard = new SpellCard(tempCard.getName(), tempCard.getRarity(), tempCard.getCost(), tempCard.getLevels(), tempCard.getType(),tempCard.getImage());
 					if (cardLevelDetails != JsonValue.NULL )
 						if (!cardLevelDetails.asJsonObject().isNull("radius"))
 							if(cardLevelDetails.asJsonObject().containsKey("radius"))

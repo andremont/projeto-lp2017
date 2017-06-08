@@ -1,4 +1,6 @@
 package ismt.application.main;
+import java.awt.Image;
+
 import javax.json.JsonArray;
 
 public class Card {
@@ -8,15 +10,25 @@ public class Card {
 	private int level;
 	private JsonArray levels;
 	private String type;
+	private CardLevel cardLevel;
+	private String image;
 
 	public Card() {
 	}
 	
+	public CardLevel getCardLevel() {
+		return cardLevel;
+	}
+
+	public void setCardLevel(CardLevel cardLevel) {
+		this.cardLevel = cardLevel;
+	}
+
 	public Card(String name) {
 		this.name = name;
 	}
-	
-	public Card(String name, Rarity rarity, String cost, JsonArray levels, String type) {
+
+	public Card(String name, Rarity rarity, String cost, JsonArray levels, String type, String image) {
 		this.rarity = rarity;
 		this.cost = cost;
 		this.level = 1;
@@ -28,48 +40,47 @@ public class Card {
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
 	public Rarity getRarity() {
 		return rarity;
 	}
-
 	public void setRarity(Rarity rarity) {
 		this.rarity = rarity;
 	}
-
 	public String getCost() {
 		return cost;
 	}
-
 	public void setCost(String cost) {
 		this.cost = cost;
 	}
-
 	public JsonArray getLevels() {
 		return this.levels;
 	}
-	
 	public void setLevels(JsonArray levels) {
 		this.levels = levels;
 	}
-
 	public int getLevel() {
 		return this.level;
 	}
-	
 	public void setLevel(int level) {
 		this.level = level;
 	}
-
 	public String getType() {
 		return type;
 	}
-
 	public void setType(String type) {
 		this.type = type;
 	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+
 }
