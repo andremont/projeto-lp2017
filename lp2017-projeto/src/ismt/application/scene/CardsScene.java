@@ -1,10 +1,21 @@
 package ismt.application.scene;
 
+import java.io.IOException;
+import java.util.ArrayList;
+
+import ismt.application.main.Card;
+import ismt.application.main.Utils;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -37,6 +48,7 @@ public class CardsScene{
 		VBox vbBtnBack = new VBox(BUTTON_SIZE);
 		vbBtnBack.setAlignment(Pos.BOTTOM_RIGHT);
 		vbBtnBack.getChildren().add(buttonBack);
+		
 		GridPane grid = new GridPane();
 		grid.add(vbBtnBack, 1, 4);
 		Scene tempScene = new Scene(grid, APP_WIDTH, APP_HEIGHT);
