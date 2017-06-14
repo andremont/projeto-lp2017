@@ -50,14 +50,6 @@
                 "quantity":1
             },
             {
-                "name": "barbarian-hut",
-                "type": "Building",
-                "cost": "7",
-                "rarity": "Rare",
-                "level": 3,
-                "quantity":1
-            },
-            {
                 "name": "ice-spirit",
                 "type": "Troop",
                 "cost": "1",
@@ -151,7 +143,7 @@
             
         ],
         "password": "root",
-        "money": "1100",
+        "money": "110000",
         "level": "8",
         "points": "2302"
     },

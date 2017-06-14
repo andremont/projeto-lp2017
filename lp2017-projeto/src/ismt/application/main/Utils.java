@@ -56,6 +56,8 @@ public class Utils {
 					tempCard.setRarity(getRarity(card.getString("rarity")));
 				if (card.containsKey("quantity"))
 					tempCard.setQuantity(card.getInt("quantity"));
+				if (card.containsKey("image"))
+					tempCard.setImage(card.getString("image"));
 				if (card.containsKey("levels"))
 				{
 					// Set initial level to 1
@@ -88,7 +90,7 @@ public class Utils {
 
 				if (tempCard.getType().toLowerCase() == "troop")
 				{
-					TroopCard newCard = new TroopCard(tempCard.getName(), tempCard.getRarity(), tempCard.getCost(), tempCard.getLevels(), tempCard.getType());
+					TroopCard newCard = new TroopCard(tempCard.getName(), tempCard.getRarity(), tempCard.getCost(), tempCard.getLevels(), tempCard.getType(), tempCard.getImage());
 					if (cardLevelDetails != JsonValue.NULL )
 						if (!cardLevelDetails.asJsonObject().isNull("hitpoints"))
 							if(cardLevelDetails.asJsonObject().containsKey("hitpoints"))
@@ -103,7 +105,7 @@ public class Utils {
 				}
 				else if (tempCard.getType().toLowerCase() == "building")
 				{
-					BuildingCard newCard = new BuildingCard(tempCard.getName(), tempCard.getRarity(), tempCard.getCost(), tempCard.getLevels(), tempCard.getType());
+					BuildingCard newCard = new BuildingCard(tempCard.getName(), tempCard.getRarity(), tempCard.getCost(), tempCard.getLevels(), tempCard.getType(), tempCard.getImage());
 					if (cardLevelDetails != JsonValue.NULL )
 						if (!cardLevelDetails.asJsonObject().isNull("deploy_time"))
 							if(cardLevelDetails.asJsonObject().containsKey("deploy_time"))
@@ -116,7 +118,7 @@ public class Utils {
 				}
 				else if (tempCard.getType().toLowerCase() == "spell")
 				{
-					SpellCard newCard = new SpellCard(tempCard.getName(), tempCard.getRarity(), tempCard.getCost(), tempCard.getLevels(), tempCard.getType());
+					SpellCard newCard = new SpellCard(tempCard.getName(), tempCard.getRarity(), tempCard.getCost(), tempCard.getLevels(), tempCard.getType(), tempCard.getImage());
 					if (cardLevelDetails != JsonValue.NULL )
 						if (!cardLevelDetails.asJsonObject().isNull("radius"))
 							if(cardLevelDetails.asJsonObject().containsKey("radius"))

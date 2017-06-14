@@ -1,6 +1,8 @@
 package ismt.application.main;
 import javax.json.JsonArray;
 
+import javafx.scene.image.Image;
+
 public class Card {
 	private String name;
 	private Rarity rarity;
@@ -10,6 +12,7 @@ public class Card {
 	private int quantity;
 	private JsonArray levels;
 	private String type;
+	private String image;
 
 	public Card() {
 	}
@@ -19,7 +22,7 @@ public class Card {
 		this.coinCost = 0;
 	}
 	
-	public Card(String name, Rarity rarity, String cost, JsonArray levels, String type) {
+	public Card(String name, Rarity rarity, String cost, JsonArray levels, String type, String image) {
 		this.rarity = rarity;
 		this.cost = cost;
 		this.level = 1;
@@ -27,6 +30,7 @@ public class Card {
 		this.name = name;
 		this.type = type;
 		this.coinCost = 0;
+		this.image = image;
 	}
 
 	public String getName() {
@@ -91,5 +95,13 @@ public class Card {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 }

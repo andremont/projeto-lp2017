@@ -1,13 +1,15 @@
 package ismt.application.main;
 import javax.json.JsonArray;
 
+import javafx.scene.image.Image;
+
 public class TroopCard extends Card{
 	private int hitPoints;
 	private int damagePoints;
 	private int damagePerSecond;
 
-	public TroopCard(String name, Rarity rarity, String cost, JsonArray levels, String type) {
-		super(name, rarity, cost, levels, type);
+	public TroopCard(String name, Rarity rarity, String cost, JsonArray levels, String type, String image) {
+		super(name, rarity, cost, levels, type, image);
 		// TODO Auto-generated constructor stub
 	}
 
