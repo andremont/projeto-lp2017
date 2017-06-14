@@ -35,6 +35,16 @@ public class Main extends Application implements GameInterface{
 	Scene sceneLogin, sceneMain, scenePlay, 
 		  sceneViewStats, sceneViewPlayers, 
 		  sceneViewCards, sceneViewRules, sceneViewShop, sceneIndividualCard; 
+	
+	private static Player playerLogged = new Player();
+	
+	public static Player getPlayerLogged() {
+		return playerLogged;
+	}
+
+	public static void setPlayerLogged(Player playerLogged) {
+		Main.playerLogged = playerLogged;
+	}
 
 	public static void main(String[] args) {
 
@@ -111,15 +121,16 @@ public class Main extends Application implements GameInterface{
 		buttonLogin.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
-				// if(Utils.validateUser(userTextField.getText(), pwBox.getText())){ // FIXME
-				if(true){
-					actiontarget.setText("Correct!");
-					primaryStage.setScene(sceneMain);
-				}
-				else{
-					actiontarget.setFill(Color.FIREBRICK);
-					actiontarget.setText("Wrong credentials: " + userName.getText() + "|" + pw.getText());
-				}
+				if(Utils.validateUser(userTextField.getText(), pwBox.getText()))// FIXME
+					if(true){
+						actiontarget.setText("Correct!");
+						playerLogged = Utils.GetUser(userTextField.getText());
+						primaryStage.setScene(sceneMain);
+					}
+					else{
+						actiontarget.setFill(Color.FIREBRICK);
+						actiontarget.setText("Wrong credentials: " + userName.getText() + "|" + pw.getText());
+					}
 			}
 		});
 		

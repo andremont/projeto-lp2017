@@ -1,40 +1,26 @@
 package ismt.application.scene;
 
-import java.awt.FlowLayout;
-import java.awt.Rectangle;
-import java.awt.TextField;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
-import javax.swing.DefaultListModel;
-import javax.swing.JList;
-
-
+import ismt.application.main.Main;
 import ismt.application.main.Card;
 import ismt.application.main.Utils;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Border;
-import javafx.scene.layout.BorderStroke;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class CardsScene{
@@ -48,14 +34,15 @@ public class CardsScene{
 	TableView<Card> table;
 	GridPane grid;
 	CardsScene scene = this;
+	ComboBox<String> comboBox;
+	Scene sceneViewCards;
 	
 	public CardsScene() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public Scene buildCardsScene(Stage primaryStage, Scene sceneMain) {
-		// TODO
-
+		
 		// Set button back action
 		EventHandler<ActionEvent> buttonBackhandler = new EventHandler<ActionEvent>() {
 			@Override
@@ -69,20 +56,23 @@ public class CardsScene{
 			public void handle(ActionEvent e) {
 				String dadosPesquisa = text.getText();
 				ArrayList<Card> cards = new ArrayList<>();
-				try {
-					cards=Utils.getAllCards();
-				} catch (IOException e1) {
-					e1.printStackTrace();
-				}
+				if(comboBox.getSelectionModel().getSelectedItem().equals("Todas")){
+					try {
+						cards=Utils.getAllCards();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}else if(comboBox.getSelectionModel().getSelectedItem().equals("Cartas do Player")){
+						cards=Main.getPlayerLogged().getAllCards();
+			          }else{
+							cards=Main.getPlayerLogged().getDeck();
+			          }
 				cards= pesquisa(cards, dadosPesquisa);
 				updateList(cards);
 				
 			}
 		};
-		
-		
-		
-		
 		
 		grid = new GridPane();
 		grid.setHgap(18);
@@ -90,7 +80,7 @@ public class CardsScene{
 		
 		Scene tempScene = new Scene(grid, APP_WIDTH, APP_HEIGHT);
 		
-		
+	
 		Button buttonBack = new Button("Back");
 		buttonBack.setOnAction(buttonBackhandler);
 		grid.setConstraints(buttonBack, 0, 0, 2, 1);
@@ -107,6 +97,7 @@ public class CardsScene{
 		try {
 			cards=Utils.getAllCards();
 		} catch (IOException e1) {
+			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		table = new TableView<Card>();
@@ -122,8 +113,39 @@ public class CardsScene{
 		    return row ;
 		});
 		updateList(cards);
-		grid.setConstraints(table, 1, 3, 7, 1);
+		grid.setConstraints(table, 1, 4, 7, 1);
 		grid.getChildren().add(table);
+		
+		comboBox = new ComboBox<String>();
+		comboBox.getItems().addAll("Todas","Cartas do Player","Deck");
+		comboBox.getSelectionModel().selectFirst();
+		comboBox.valueProperty().addListener(new ChangeListener<String>() {
+			 @Override public void changed(ObservableValue ov, String t, String t1) {
+		          if(t1.equals("Todas")){
+		        	  	ArrayList<Card> cards = new ArrayList<>();
+						try {
+							cards=Utils.getAllCards();
+							System.out.println("Todas Cartas");
+						} catch (IOException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+						updateList(cards);
+		          }else if(t1.equals("Cartas do Player")){
+		        	  	ArrayList<Card> cards = new ArrayList<>();
+						cards=Main.getPlayerLogged().getAllCards();
+						System.out.println("All player Card");
+						updateList(cards);
+		          }else{
+		        	  	ArrayList<Card> cards = new ArrayList<>();
+						cards=Main.getPlayerLogged().getDeck();
+						System.out.println("Deck of player");
+						updateList(cards);
+		          }
+		        }
+		});
+		grid.setConstraints(comboBox, 2, 3, 6, 1);
+		grid.getChildren().add(comboBox);
 		
 		Button buttonSelec = new Button("Ver Selecionada");
 		buttonSelec.setOnAction(buttonPesqhandler);
