@@ -1,5 +1,9 @@
 package ismt.application.scene;
 
+import java.awt.List;
+import java.util.ArrayList;
+
+import ismt.application.main.Player;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -16,11 +20,22 @@ public class PlayersScene{
 	final static int BUTTON_SIZE = 100;
 	final static int GAP_SIZE = 10;
 	
-	public PlayersScene() {
-		// TODO Auto-generated constructor stub
+	public PlayersScene() 
+	{
+		ArrayList<Player> players = new ArrayList<>();
+
+        for(Player model : players) {
+            System.out.println(model.getName());
+        }
+
+        for(int i = 0; i < players.size(); i++) {
+            System.out.println(players.get(i).getName());
+        }
+		
 	}
 
-	public Scene buildPlayersScene(Stage primaryStage, Scene sceneMain) {
+	public Scene buildPlayersScene(Stage primaryStage, Scene sceneMain) 
+	{
 		// TODO
 
 		// Set button back action

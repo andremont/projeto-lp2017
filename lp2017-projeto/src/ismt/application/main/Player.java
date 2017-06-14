@@ -11,11 +11,13 @@ public class Player {
 	private ArrayList<Card> allCards;
 	private ArrayList<Tower> towers;
 	
-	public Player() {
+	public Player() 
+	{
 		
 	}
 	
-	public Player(String name, String level, ArrayList<Card> deck, ArrayList<Tower> towers) {
+	public Player(String name, String level, ArrayList<Card> deck, ArrayList<Tower> towers) 
+	{
 		//TODO Criar jogador com parâmetros e baralho aleatório
 		
 	}
