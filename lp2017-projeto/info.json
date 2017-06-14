@@ -8,6 +8,7 @@
     "cost": "6",
     "count": "x1",
     "rarity": "Common",
+    "image": "src\\sprites\\RoyalGiantCard.jpg",
     "type": "Troop",
     "levels": [
       {
@@ -99,6 +100,8 @@
     "cost": "1",
     "summons": "x3",
     "rarity": "Common",
+    "image": "src\\sprites\\Skeletons.jpg",
+    "type": "Troop",
     "levels": [
       {
         "level": "1",
@@ -189,6 +192,8 @@
     "cost": "2",
     "summons": "x1",
     "rarity": "Common",
+    "image": "src\\sprites\\BomberCard.jpg",
+    "type": "Troop",
     "levels": [
       {
         "level": "1",
@@ -280,6 +285,8 @@
     "count": "x2",
     "type": "Troop",
     "rarity": "Common",
+    "image": "src\\sprites\\ArchersCard.jpg",
+    "type": "Troop",
     "levels": [
       {
         "level": "1",
@@ -370,6 +377,7 @@
     "cost": "3",
     "count": "x1",
     "rarity": "Common",
+    "image": "src\\sprites\\KnightCard.jpg",
     "type": "Troop",
     "levels": [
       {
@@ -458,9 +466,10 @@
     "deploy_time": "1 sec",
     "range": "6.5",
     "target": "Air & Ground",
-    "cost": "10",
+    "cost": "9",
     "count": "x3",
     "rarity": "Rare",
+    "image": "src\\sprites\\ThreeMusketeersCard.jpg",
     "type": "Troop",
     "levels": [
       {
@@ -540,6 +549,8 @@
     "cost": "5",
     "summons": "x1",
     "rarity": "Epic",
+    "image": "src\\sprites\\BabyDragonCard.jpg",
+    "type": "Troop",
     "levels": [
       {
         "level": "1",
@@ -600,6 +611,8 @@
     "cost": "5",
     "summons": "x4",
     "rarity": "Common",
+    "image": "src\\sprites\\BarbariansCard.jpg",
+    "type": "Troop",
     "levels": [
       {
         "level": "1",
@@ -690,6 +703,7 @@
     "cost": "4",
     "count": "x1",
     "rarity": "Epic",
+    "image": "src\\sprites\\DarkPrinceCard.jpg",
     "type": "Troop",
     "levels": [
       {
@@ -765,8 +779,9 @@
     "range": "2.5",
     "targets": "Ground and Air",
     "count": "x6",
-    "costs": "5",
+    "cost": "5",
     "rarity": "Common",
+    "image": "src\\sprites\\MinionHordeCard.jpg",
     "type": "Troop",
     "levels": [
       {
@@ -858,6 +873,7 @@
     "cost": "3",
     "count": "x1",
     "rarity": "Legendary",
+    "image": "src\\sprites\\PrincessCard.jpg",
     "type": "Troop",
     "levels": [
       {
@@ -901,6 +917,7 @@
     "cost": "3",
     "count": "x1",
     "rarity": "Legendary",
+    "image": "src\\sprites\\IceWizardCard.jpg",
     "type": "Troop",
     "levels": [
       {
@@ -942,6 +959,7 @@
     "deploy_time": "3 sec",
     "target": "Ground",
     "rarity": "Epic",
+    "image": "src\\sprites\\GolemCard.jpg",
     "type": "Troop",
     "levels": [
       {
@@ -983,8 +1001,9 @@
     "range": "5.5",
     "targets": "Air & Ground",
     "count": "x1",
-    "costs": "5",
+    "cost": "5",
     "rarity": "Rare",
+    "image": "src\\sprites\\WizardCard.jpg",
     "type": "Troop",
     "levels": [
       {
@@ -1064,6 +1083,7 @@
     "cost": "4",
     "count": "x1",
     "rarity": "Rare",
+    "image": "src\\sprites\\HogRiderCard.jpg",
     "type": "Troop",
     "levels": [
       {
@@ -1144,6 +1164,7 @@
     "count": "x1",
     "rarity": "Rare",
     "type": "Troop",
+    "image": "src\\sprites\\GiantCard.jpg",
     "levels": [
       {
         "level": "1",
@@ -1221,6 +1242,8 @@
     "targets": "Ground",
     "cost": "6",
     "rarity": "Epic",
+    "type": "Troop",
+    "image": "src\\sprites\\GiantSkeletonCard.jpg",
     "levels": [
       {
         "level": "1",
@@ -1289,6 +1312,7 @@
     "cost": "8",
     "count": "x1",
     "rarity": "Epic",
+    "image": "src\\sprites\\PEKKACard.jpg",
     "type": "Troop",
     "levels": [
       {
@@ -1349,6 +1373,8 @@
     "targets": "Buildings",
     "cost": "5",
     "rarity": "Epic",
+    "image": "src\\sprites\\BalloonCard.jpg",
+    "type": "Troop",
     "levels": [
       {
         "level": "1",
@@ -1417,6 +1443,7 @@
     "cost": "5",
     "count": "x1",
     "rarity": "Epic",
+    "image": "src\\sprites\\PrinceCard.jpg",
     "type": "Troop",
     "levels": [
       {
@@ -1486,6 +1513,8 @@
     "cost": "3",
     "summons": "x3",
     "rarity": "Common",
+    "image": "src\\sprites\\MinionsCard.jpg",
+    "type": "Troop",
     "levels": [
       {
         "level": "1",
@@ -1576,6 +1605,8 @@
     "cost": "2",
     "summons": "x1",
     "rarity": "Common",
+    "image": "src\\sprites\\GoblinsCard.jpg",
+    "type": "Troop",
     "levels": [
       {
         "level": "1",
@@ -1666,6 +1697,8 @@
     "cost": "5",
     "summons": "x1",
     "rarity": "Epic",
+    "type": "Troop",
+    "image": "src\\sprites\\WitchCard.jpg",
     "levels": [
       {
         "level": "1",
@@ -1734,6 +1767,8 @@
     "cost": "4",
     "summons": "x1",
     "rarity": "Rare",
+    "image": "src\\sprites\\MiniPEKKACard.jpg",
+    "type": "Troop",
     "levels": [
       {
         "level": "1",
@@ -1806,6 +1841,8 @@
     "cost": "5",
     "summons": "x1",
     "rarity": "Rare",
+    "type": "Troop",
+    "image": "src\\sprites\\MusketeerCard.jpg",
     "levels": [
       {
         "level": "1",
@@ -1884,6 +1921,8 @@
     "cost": "4",
     "summons": "x1",
     "rarity": "Rare",
+    "image": "src\\sprites\\Valkyrie.jpg",
+    "type": "Troop",
     "levels": [
       {
         "level": "1",
@@ -1956,11 +1995,12 @@
   "clash-royale-skeleton-army": {
     "rarity": "Epic",
     "type": "Troop",
-    "costs": "4",
+    "cost": "4",
     "targets": "Ground",
     "range": "Melee",
     "speed": "Fast",
     "hit_speed": "27",
+    "image": "src\\sprites\\SkeletonArmyCard.jpg",
     "deploy_time": "1sec",
     "levels": [
       {
@@ -2022,6 +2062,7 @@
     "cost": "2",
     "count": "x3",
     "rarity": "Common",
+    "image": "src\\sprites\\SpearGoblinsCard.jpg",
     "type": "Troop",
     "levels": [
       {
@@ -2114,6 +2155,7 @@
     "cost": "4",
     "type": "Troop",
     "rarity": "Legendary",
+    "image": "src\\sprites\\LumberjackCard.jpg",
     "levels": [
       {
         "level": "1",
@@ -2157,6 +2199,7 @@
     "count": "x1",
     "type": "Troop",
     "rarity": "Epic",
+    "image": "src\\sprites\\BowlerCard.jpg",
     "levels": [
       {
         "level": "1",
@@ -2217,6 +2260,7 @@
     "cost": "1",
     "type": "Troop",
     "rarity": "Common",
+    "image": "src\\sprites\\IceSpiritCard.jpg",
     "levels": [
       {
         "level": "1",
@@ -2295,6 +2339,7 @@
     "count": "x1",
     "type": "Troop",
     "rarity": "Legendary",
+    "image": "src\\sprites\\MinerCard.jpg",
     "levels": [
       {
         "level": "1",
@@ -2341,6 +2386,7 @@
     "target": "Ground",
     "cost": "7",
     "type": "Troop",
+    "image": "src\\sprites\\LavaHoundCard.jpg",
     "rarity": "Legendary",
 	 "levels": [
       {
@@ -2384,6 +2430,7 @@
     "cost": "3",
     "count": "x3",
     "type": "Troop",
+    "image": "src\\sprites\\GuardsCard.jpg",
     "rarity": "Epic",
     "levels": [
       {
@@ -2452,6 +2499,7 @@
     "cost": "2",
     "count": "x3",
     "type": "Troop",
+    "image": "src\\sprites\\FireSpiritsCard.jpg",
     "rarity": "Common",
     "levels": [
       {
@@ -2526,6 +2574,7 @@
     "duration": "10 sec",
     "cost": "4",
     "rarity": "Epic",
+    "image": "src\\sprites\\PoisonCard.jpg",
     "type": "Spell",
     "levels": [
       {
@@ -2571,8 +2620,9 @@
     ]
   },
   "mirror": {
-    "cost": "Cost of Previous Card Played + 1",
+    "cost": "0",
     "rarity": "Epic",
+    "image": "src\\sprites\\MirrorCard.jpg",
     "type": "Spell",
     "levels": [
       {
@@ -2637,6 +2687,7 @@
     "radius": "2.5",
     "cost": "2",
     "rarity": "Common",
+    "image": "src\\sprites\\ZapCard.jpg",
     "type": "Spell",
     "levels": [
       {
@@ -2710,6 +2761,7 @@
     "radius": "3",
     "cost": "4",
     "rarity": "Epic",
+    "image": "src\\sprites\\FreezeCard.jpg",
     "type": "Spell",
     "levels": [
       {
@@ -2750,6 +2802,7 @@
     "radius": "5",
     "cost": "3",
     "rarity": "Epic",
+    "image": "src\\sprites\\RageCard.jpg",
     "type": "Spell",
     "levels": [
       {
@@ -2790,6 +2843,7 @@
     "radius": "2",
     "cost": "6",
     "rarity": "Rare",
+    "image": "src\\sprites\\RocketCard.jpg",
     "type": "Spell",
     "levels": [
       {
@@ -2854,6 +2908,7 @@
     "count": "x3",
     "cost": "4",
     "rarity": "Epic",
+    "image": "src\\sprites\\GoblinBarrelCard.jpg",
     "type": "Spell",
     "levels": [
       {
@@ -2894,6 +2949,7 @@
     "radius": "2.5",
     "cost": "4",
     "rarity": "Rare",
+    "image": "src\\sprites\\FireballCard.jpg",
     "type": "Spell",
     "levels": [
       {
@@ -2954,6 +3010,7 @@
     "cost": "6",
     "targets": "x3",
     "rarity": "Epic",
+    "image": "src\\sprites\\LightningCard.jpg",
     "type": "Spell",
     "levels": [
       {
@@ -3002,6 +3059,7 @@
     "radius": "4",
     "cost": "3",
     "rarity": "Common",
+    "image": "src\\sprites\\ArrowsCard.jpg",
     "type": "Spell",
     "levels": [
       {
@@ -3074,6 +3132,7 @@
     "target": "Ground",
     "cost": "4",
     "rarity": "Common",
+    "image": "src\\sprites\\MortarCard.jpg",
     "type": "Building",
     "levels": [
       {
@@ -3163,6 +3222,7 @@
     "cost": "5",
     "rarity": "Rare",
     "type": "Building",
+    "image": "src\\sprites\\ElixirCollector.jpg",
     "levels": [
       {
         "level": "1",
@@ -3219,6 +3279,7 @@
     "cost": "6",
     "rarity": "Epic",
     "type": "Building",
+    "image": "src\\sprites\\X-BowCard.jpg",
     "levels": [
       {
         "level": "1",
@@ -3278,6 +3339,7 @@
     "target": "Ground",
     "cost": "3",
     "rarity": "Common",
+    "image": "src\\sprites\\CannonCard.jpg",
     "type": "Building",
     "levels": [
       {
@@ -3366,6 +3428,7 @@
     "lifetime": "1 min",
     "cost": "7",
     "rarity": "Rare",
+    "image": "src\\sprites\\BarbarianHutCard.jpg",
     "type": "Building",
     "levels": [
       {
@@ -3428,73 +3491,74 @@
     "target": "Air and Ground",
     "cost": "5",
     "rarity": "Rare",
+    "image": "src\\sprites\\InfernoTowerCard.jpg",
     "type": "Building",
     "levels": [
       {
         "level": "1",
         "hitpoints": "800",
-        "damage": "20-400",
-        "damage_per_second": "50-1,000"
+        "damage": "400",
+        "damage_per_second": "1,000"
       },
       {
         "level": "2",
         "hitpoints": "880",
-        "damage": "22-440",
-        "damage_per_second": "55-1,100"
+        "damage": "440",
+        "damage_per_second": "1,100"
       },
       {
         "level": "3",
         "hitpoints": "968",
-        "damage": "24-484",
-        "damage_per_second": "60-1,210"
+        "damage": "484",
+        "damage_per_second": "1,210"
       },
       {
         "level": "4",
         "hitpoints": "1,064",
-        "damage": "26-532",
-        "damage_per_second": "65-1,330"
+        "damage": "532",
+        "damage_per_second": "1,330"
       },
       {
         "level": "5",
         "hitpoints": "1,168",
-        "damage": "29-584",
-        "damage_per_second": "72-1,460"
+        "damage": "584",
+        "damage_per_second": "1,460"
       },
       {
         "level": "6",
         "hitpoints": "1,280",
-        "damage": "32-640",
-        "damage_per_second": "80-1,600"
+        "damage": "640",
+        "damage_per_second": "1,600"
       },
       {
         "level": "7",
         "hitpoints": "1,408",
-        "damage": "35-704",
-        "damage_per_second": "87-1,760"
+        "damage": "704",
+        "damage_per_second": "1,760"
       },
       {
         "level": "8",
         "hitpoints": "1,544",
-        "damage": "38-772",
-        "damage_per_second": "95-1,930"
+        "damage": "772",
+        "damage_per_second": "1,930"
       },
       {
         "level": "9",
         "hitpoints": "1,696",
-        "damage": "42-848",
-        "damage_per_second": "105-2,120"
+        "damage": "848",
+        "damage_per_second": "2,120"
       },
       {
         "level": "10",
         "hitpoints": "1,864",
-        "damage": "46-932",
-        "damage_per_second": "115-2,330"
+        "damage": "932",
+        "damage_per_second": "2,330"
       },
       {
         "level": "11",
         "hitpoints": "2,048",
-        "damage": "51-1024",
-        "damage_per_second": "127-2,560"
+        "damage": "1024",
+        "damage_per_second": "2,560"
       }
     ]
   },
@@ -3506,6 +3570,7 @@
     "target": "Ground",
     "cost": "5",
     "rarity": "Rare",
+    "image": "src\\sprites\\BombTowerCard.jpg",
     "type": "Building",
     "levels": [
       {
@@ -3582,6 +3647,7 @@
     "lifetime": "1 min",
     "cost": "5",
     "rarity": "Rare",
+    "image": "src\\sprites\\GoblinHutCard.jpg",
     "type": "Building",
     "levels": [
       {
@@ -3649,6 +3715,7 @@
     "target": "Air and Ground",
     "cost": "4",
     "rarity": "Common",
+    "image": "src\\sprites\\TeslaCard.jpg",
     "type": "Building",
     "levels": [
       {
@@ -3740,6 +3807,8 @@
     "cost": "3",
     "lifetime": "1 minute",
     "rarity": "Rare",
+    "image": "src\\sprites\\TombstoneCard.jpg",
+    "type": "Building",
     "levels": [
       {
         "level": "1",
@@ -3804,6 +3873,7 @@
     "distance": "9.6",
     "cost": "2",
     "type": "Spell",
+    "image": "src\\sprites\\TheLogCard.jpg",
     "rarity": "Legendary",
     "levels": [
       {
@@ -3842,6 +3912,7 @@
     "cost": "6",
     "count": "x1",
     "type": "Troop",
+    "image": "src\\sprites\\SparkyCard.jpg",
     "rarity": "Legendary",
     "levels": [
       {
@@ -3883,6 +3954,7 @@
     "cost": "4",
     "type": "Building",
     "rarity": "Rare",
+    "image": "src\\sprites\\FurnaceCard.jpg",
     "levels": [
       {
         "level": "1",

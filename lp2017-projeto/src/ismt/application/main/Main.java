@@ -3,7 +3,6 @@ package ismt.application.main;
 import ismt.application.scene.*;
 import static javafx.geometry.HPos.RIGHT;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 import javafx.application.Application;
@@ -33,10 +32,9 @@ public class Main extends Application implements GameInterface{
 	final int GAP_SIZE = 10;
 	Scene sceneLogin, sceneMain, scenePlay, 
 		  sceneViewStats, sceneViewPlayers, 
-		  sceneViewCards, sceneViewRules, sceneViewShop; 
+		  sceneViewCards, sceneViewRules, sceneViewShop, sceneIndividualCard; 
 
 	public static void main(String[] args) {
-
 		launch(args);
 	}
 
@@ -110,15 +108,15 @@ public class Main extends Application implements GameInterface{
 		buttonLogin.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
-				// if(Utils.validateUser(userTextField.getText(), pwBox.getText())){ // FIXME
-				if(true){
-					actiontarget.setText("Correct!");
-					primaryStage.setScene(sceneMain);
-				}
-				else{
-					actiontarget.setFill(Color.FIREBRICK);
-					actiontarget.setText("Wrong credentials: " + userName.getText() + "|" + pw.getText());
-				}
+				if(Utils.validateUser(userTextField.getText(), pwBox.getText()))// FIXME
+					if(true){
+						actiontarget.setText("Correct!");
+						primaryStage.setScene(sceneMain);
+					}
+					else{
+						actiontarget.setFill(Color.FIREBRICK);
+						actiontarget.setText("Wrong credentials: " + userName.getText() + "|" + pw.getText());
+					}
 			}
 		});
 		
@@ -129,7 +127,6 @@ public class Main extends Application implements GameInterface{
 				primaryStage.close();
 			}
 		});
-	
 	}
 
 	public void buildMainScene(Stage primaryStage) {
@@ -173,14 +170,18 @@ public class Main extends Application implements GameInterface{
 			public void handle(ActionEvent e) {
 				if (e.getSource() == buttonLogout)
 					primaryStage.setScene(sceneLogin);
-				else if (e.getSource() == buttonPlay)
+				else if (e.getSource() == buttonPlay){
 					primaryStage.setScene(scenePlay);
+					GameMain game = new GameMain();
+					game.start();
+				}
 				else if (e.getSource() == buttonStats)
 					primaryStage.setScene(sceneViewStats);
 				else if (e.getSource() == buttonPlayers)
 					primaryStage.setScene(sceneViewPlayers);
-				else if (e.getSource() == buttonCards)
+				else if (e.getSource() == buttonCards){
 					primaryStage.setScene(sceneViewCards);
+				}					
 				else if (e.getSource() == buttonShop)
 					primaryStage.setScene(sceneViewShop);
 				else if (e.getSource() == buttonRules)
