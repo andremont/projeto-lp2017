@@ -39,7 +39,11 @@ public class Main extends Application implements GameInterface{
 		  sceneViewStats, sceneViewPlayers, 
 		  sceneViewCards, sceneViewRules, sceneViewShop;
 
-	static boolean bo = false;
+	static boolean variavelDeAjuda = false;
+	static int commonCard = 2;
+	static int rareCard = 20;
+	static int epicCard = 1000;
+	static int legendaryCard = 10000;
 	
 	public static void main(String[] args) {
 
@@ -274,20 +278,17 @@ public class Main extends Application implements GameInterface{
 	}
 		
 	public static int buyCard(ArrayList<Card> temp,ArrayList<Card> playerCards, Player player,int contador) {
-		int commonCard = 2;
-		int rareCard = 20;
-		int epicCard = 1000;
-		int legendaryCard = 10000;
+		
 		Card selectedCard = temp.get(contador);	
 		
 		if(selectedCard.getRarity() == Rarity.Common && player.getMoney() >= selectedCard.getCoinCost()){
 			for(int cont = 0; cont < playerCards.size(); cont++){
 				if(playerCards.get(cont).getName().toLowerCase().equals(selectedCard.getName().toLowerCase())){
-					bo = true;
+					variavelDeAjuda = true;
 					player.getAllCards().get(contador).setQuantity(player.getAllCards().get(contador).getQuantity()+1);
 				}
 			}
-			if(!bo){
+			if(!variavelDeAjuda){
 				player.getAllCards().add(selectedCard);
 			}
 			player.setMoney(player.getMoney()-selectedCard.getCoinCost());
@@ -297,12 +298,12 @@ public class Main extends Application implements GameInterface{
 		else if(selectedCard.getRarity() == Rarity.Rare && player.getMoney() >= selectedCard.getCoinCost()){
 			for(int cont = 0; cont < playerCards.size(); cont++){
 				if(playerCards.get(cont).getName().toLowerCase() == selectedCard.getName().toLowerCase()){
-					bo = true;
+					variavelDeAjuda = true;
 					player.getAllCards().get(contador).setQuantity(player.getAllCards().get(contador).getQuantity()+1);
 				}
 				
 			}
-			if(!bo){
+			if(!variavelDeAjuda){
 				player.getAllCards().add(selectedCard);
 			}
 			player.setMoney(player.getMoney()-selectedCard.getCoinCost());
@@ -313,11 +314,11 @@ public class Main extends Application implements GameInterface{
 		else if(selectedCard.getRarity() == Rarity.Epic && player.getMoney() >= selectedCard.getCoinCost()){
 			for(int cont = 0; cont < playerCards.size(); cont++){
 				if(playerCards.get(cont).getName().toLowerCase().equals(selectedCard.getName().toLowerCase())){
-					bo = true;
+					variavelDeAjuda = true;
 					player.getAllCards().get(contador).setQuantity(player.getAllCards().get(contador).getQuantity()+1);
 				}
 			}
-			if(!bo){
+			if(!variavelDeAjuda){
 				player.getAllCards().add(selectedCard);
 			}
 			player.setMoney(player.getMoney()-selectedCard.getCoinCost());
@@ -327,11 +328,11 @@ public class Main extends Application implements GameInterface{
 		else if(selectedCard.getRarity() == Rarity.Legendary && player.getMoney() >= selectedCard.getCoinCost()){
 			for(int cont = 0; cont < playerCards.size(); cont++){
 				if(playerCards.get(cont).getName().toLowerCase().equals(selectedCard.getName().toLowerCase())){
-					bo = true;
+					variavelDeAjuda = true;
 					player.getAllCards().get(contador).setQuantity(player.getAllCards().get(contador).getQuantity()+1);
 				}
 			}	
-			if(!bo){
+			if(!variavelDeAjuda){
 				player.getAllCards().add(selectedCard);
 			}
 			player.setMoney(player.getMoney()-selectedCard.getCoinCost());
@@ -360,246 +361,261 @@ public class Main extends Application implements GameInterface{
 			if(selectedCard==playerCards.get(i)){
 				quantity = playerCards.get(i).getQuantity();
 				if(playerCards.get(i).getRarity() == Rarity.Common){
-					if(playerCards.get(i).getLevel() == 1){
-						if(quantity>=2){
-							player.getAllCards().get(i).setLevel(2);
-							player.getAllCards().get(i).setQuantity(quantity-2);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 2){
-						if(quantity>=4){
-							player.getAllCards().get(i).setLevel(3);
-							player.getAllCards().get(i).setQuantity(quantity-4);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 3){
-						if(quantity>=10){
-							player.getAllCards().get(i).setLevel(4);
-							player.getAllCards().get(i).setQuantity(quantity-10);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 4){
-						if(quantity>=20){
-							player.getAllCards().get(i).setLevel(5);
-							player.getAllCards().get(i).setQuantity(quantity-20);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 5){
-						if(quantity>=50){
-							player.getAllCards().get(i).setLevel(6);
-							player.getAllCards().get(i).setQuantity(quantity-50);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 6){
-						if(quantity>=100){
-							player.getAllCards().get(i).setLevel(7);
-							player.getAllCards().get(i).setQuantity(quantity-100);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 7){
-						if(quantity>=200){
-							player.getAllCards().get(i).setLevel(8);
-							player.getAllCards().get(i).setQuantity(quantity-200);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 8){
-						if(quantity>=400){
-							player.getAllCards().get(i).setLevel(9);
-							player.getAllCards().get(i).setQuantity(quantity-400);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 9){
-						if(quantity>=800){
-							player.getAllCards().get(i).setLevel(10);
-							player.getAllCards().get(i).setQuantity(quantity-800);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 10){
-						if(quantity>=1000){
-							player.getAllCards().get(i).setLevel(11);
-							player.getAllCards().get(i).setQuantity(quantity-1000);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 11){
-						if(quantity>=2000){
-							player.getAllCards().get(i).setLevel(12);
-							player.getAllCards().get(i).setQuantity(quantity-2000);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 12){
-						if(quantity>=5000){
-							player.getAllCards().get(i).setLevel(13);
-							player.getAllCards().get(i).setQuantity(quantity-5000);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
+					upgradeCommon(player, playerCards, quantity, i);
 				}
 				else if(playerCards.get(i).getRarity() == Rarity.Rare){
-					if(playerCards.get(i).getLevel() == 1){
-						if(quantity>=2){
-							player.getAllCards().get(i).setLevel(2);
-							player.getAllCards().get(i).setQuantity(quantity-2);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 2){
-						if(quantity>=4){
-							player.getAllCards().get(i).setLevel(3);
-							player.getAllCards().get(i).setQuantity(quantity-4);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 3){
-						if(quantity>=10){
-							player.getAllCards().get(i).setLevel(4);
-							player.getAllCards().get(i).setQuantity(quantity-10);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 4){
-						if(quantity>=20){
-							player.getAllCards().get(i).setLevel(5);
-							player.getAllCards().get(i).setQuantity(quantity-20);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 5){
-						if(quantity>=50){
-							player.getAllCards().get(i).setLevel(6);
-							player.getAllCards().get(i).setQuantity(quantity-50);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 6){
-						if(quantity>=100){
-							player.getAllCards().get(i).setLevel(7);
-							player.getAllCards().get(i).setQuantity(quantity-100);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 7){
-						if(quantity>=200){
-							player.getAllCards().get(i).setLevel(8);
-							player.getAllCards().get(i).setQuantity(quantity-200);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 8){
-						if(quantity>=400){
-							player.getAllCards().get(i).setLevel(9);
-							player.getAllCards().get(i).setQuantity(quantity-400);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 9){
-						if(quantity>=800){
-							player.getAllCards().get(i).setLevel(10);
-							player.getAllCards().get(i).setQuantity(quantity-800);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 10){
-						if(quantity>=1000){
-							player.getAllCards().get(i).setLevel(11);
-							player.getAllCards().get(i).setQuantity(quantity-1000);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
+					upgradeRare(player, playerCards, quantity, i);
 				}
 				else if(playerCards.get(i).getRarity() == Rarity.Epic){
-					if(playerCards.get(i).getLevel() == 1){
-						if(quantity>=2){
-							player.getAllCards().get(i).setLevel(2);
-							player.getAllCards().get(i).setQuantity(quantity-2);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 2){
-						if(quantity>=4){
-							player.getAllCards().get(i).setLevel(3);
-							player.getAllCards().get(i).setQuantity(quantity-4);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 3){
-						if(quantity>=10){
-							player.getAllCards().get(i).setLevel(4);
-							player.getAllCards().get(i).setQuantity(quantity-10);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 4){
-						if(quantity>=20){
-							player.getAllCards().get(i).setLevel(5);
-							player.getAllCards().get(i).setQuantity(quantity-20);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 5){
-						if(quantity>=50){
-							player.getAllCards().get(i).setLevel(6);
-							player.getAllCards().get(i).setQuantity(quantity-50);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 6){
-						if(quantity>=100){
-							player.getAllCards().get(i).setLevel(7);
-							player.getAllCards().get(i).setQuantity(quantity-100);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 7){
-						if(quantity>=200){
-							player.getAllCards().get(i).setLevel(8);
-							player.getAllCards().get(i).setQuantity(quantity-200);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
+					upgradeEpic(player, playerCards, quantity, i);
 				}
 				else if(playerCards.get(i).getRarity() == Rarity.Legendary){
-					if(playerCards.get(i).getLevel() == 1){
-						if(quantity>=2){
-							player.getAllCards().get(i).setLevel(2);
-							player.getAllCards().get(i).setQuantity(quantity-2);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 2){
-						if(quantity>=4){
-							player.getAllCards().get(i).setLevel(3);
-							player.getAllCards().get(i).setQuantity(quantity-4);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 3){
-						if(quantity>=10){
-							player.getAllCards().get(i).setLevel(4);
-							player.getAllCards().get(i).setQuantity(quantity-10);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
-					else if(playerCards.get(i).getLevel() == 4){
-						if(quantity>=20){
-							player.getAllCards().get(i).setLevel(5);
-							player.getAllCards().get(i).setQuantity(quantity-20);
-						}else
-							System.out.println("You dont have sufficient cards to upgrade!");
-					}
+					upgradeLengendary(player, playerCards, quantity, i);
 				}
-			}
-				
+			}	
+		}
+	}
+
+	private static void upgradeLengendary(Player player, ArrayList<Card> playerCards, int quantity, int i) {
+		if(playerCards.get(i).getLevel() == 1 ){
+			if(quantity>=2){
+				player.getAllCards().get(i).setLevel(2);
+				player.getAllCards().get(i).setQuantity(quantity-2);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 2){
+			if(quantity>=4){
+				player.getAllCards().get(i).setLevel(3);
+				player.getAllCards().get(i).setQuantity(quantity-4);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 3){
+			if(quantity>=10){
+				player.getAllCards().get(i).setLevel(4);
+				player.getAllCards().get(i).setQuantity(quantity-10);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 4){
+			if(quantity>=20){
+				player.getAllCards().get(i).setLevel(5);
+				player.getAllCards().get(i).setQuantity(quantity-20);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+	}
+
+	private static void upgradeEpic(Player player, ArrayList<Card> playerCards, int quantity, int i) {
+		if(playerCards.get(i).getLevel() == 1){
+			if(quantity>=2){
+				player.getAllCards().get(i).setLevel(2);
+				player.getAllCards().get(i).setQuantity(quantity-2);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 2){
+			if(quantity>=4){
+				player.getAllCards().get(i).setLevel(3);
+				player.getAllCards().get(i).setQuantity(quantity-4);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 3){
+			if(quantity>=10){
+				player.getAllCards().get(i).setLevel(4);
+				player.getAllCards().get(i).setQuantity(quantity-10);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 4){
+			if(quantity>=20){
+				player.getAllCards().get(i).setLevel(5);
+				player.getAllCards().get(i).setQuantity(quantity-20);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 5){
+			if(quantity>=50){
+				player.getAllCards().get(i).setLevel(6);
+				player.getAllCards().get(i).setQuantity(quantity-50);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 6){
+			if(quantity>=100){
+				player.getAllCards().get(i).setLevel(7);
+				player.getAllCards().get(i).setQuantity(quantity-100);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 7){
+			if(quantity>=200){
+				player.getAllCards().get(i).setLevel(8);
+				player.getAllCards().get(i).setQuantity(quantity-200);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+	}
+
+	private static void upgradeRare(Player player, ArrayList<Card> playerCards, int quantity, int i) {
+		if(playerCards.get(i).getLevel() == 1){
+			if(quantity>=2){
+				player.getAllCards().get(i).setLevel(2);
+				player.getAllCards().get(i).setQuantity(quantity-2);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 2){
+			if(quantity>=4){
+				player.getAllCards().get(i).setLevel(3);
+				player.getAllCards().get(i).setQuantity(quantity-4);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 3){
+			if(quantity>=10){
+				player.getAllCards().get(i).setLevel(4);
+				player.getAllCards().get(i).setQuantity(quantity-10);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 4){
+			if(quantity>=20){
+				player.getAllCards().get(i).setLevel(5);
+				player.getAllCards().get(i).setQuantity(quantity-20);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 5){
+			if(quantity>=50){
+				player.getAllCards().get(i).setLevel(6);
+				player.getAllCards().get(i).setQuantity(quantity-50);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 6){
+			if(quantity>=100){
+				player.getAllCards().get(i).setLevel(7);
+				player.getAllCards().get(i).setQuantity(quantity-100);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 7){
+			if(quantity>=200){
+				player.getAllCards().get(i).setLevel(8);
+				player.getAllCards().get(i).setQuantity(quantity-200);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 8){
+			if(quantity>=400){
+				player.getAllCards().get(i).setLevel(9);
+				player.getAllCards().get(i).setQuantity(quantity-400);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 9){
+			if(quantity>=800){
+				player.getAllCards().get(i).setLevel(10);
+				player.getAllCards().get(i).setQuantity(quantity-800);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 10){
+			if(quantity>=1000){
+				player.getAllCards().get(i).setLevel(11);
+				player.getAllCards().get(i).setQuantity(quantity-1000);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+	}
+
+	private static void upgradeCommon(Player player, ArrayList<Card> playerCards, int quantity, int i) {
+		if(playerCards.get(i).getLevel() == 1){
+			if(quantity>=2){
+				player.getAllCards().get(i).setLevel(2);
+				player.getAllCards().get(i).setQuantity(quantity-2);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 2){
+			if(quantity>=4){
+				player.getAllCards().get(i).setLevel(3);
+				player.getAllCards().get(i).setQuantity(quantity-4);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 3){
+			if(quantity>=10){
+				player.getAllCards().get(i).setLevel(4);
+				player.getAllCards().get(i).setQuantity(quantity-10);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 4){
+			if(quantity>=20){
+				player.getAllCards().get(i).setLevel(5);
+				player.getAllCards().get(i).setQuantity(quantity-20);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 5){
+			if(quantity>=50){
+				player.getAllCards().get(i).setLevel(6);
+				player.getAllCards().get(i).setQuantity(quantity-50);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 6){
+			if(quantity>=100){
+				player.getAllCards().get(i).setLevel(7);
+				player.getAllCards().get(i).setQuantity(quantity-100);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 7){
+			if(quantity>=200){
+				player.getAllCards().get(i).setLevel(8);
+				player.getAllCards().get(i).setQuantity(quantity-200);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 8){
+			if(quantity>=400){
+				player.getAllCards().get(i).setLevel(9);
+				player.getAllCards().get(i).setQuantity(quantity-400);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 9){
+			if(quantity>=800){
+				player.getAllCards().get(i).setLevel(10);
+				player.getAllCards().get(i).setQuantity(quantity-800);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 10){
+			if(quantity>=1000){
+				player.getAllCards().get(i).setLevel(11);
+				player.getAllCards().get(i).setQuantity(quantity-1000);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 11){
+			if(quantity>=2000){
+				player.getAllCards().get(i).setLevel(12);
+				player.getAllCards().get(i).setQuantity(quantity-2000);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
+		}
+		else if(playerCards.get(i).getLevel() == 12){
+			if(quantity>=5000){
+				player.getAllCards().get(i).setLevel(13);
+				player.getAllCards().get(i).setQuantity(quantity-5000);
+			}else
+				System.out.println("You dont have sufficient cards to upgrade!");
 		}
 	}
 	
