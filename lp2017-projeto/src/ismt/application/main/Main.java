@@ -33,6 +33,16 @@ public class Main extends Application implements GameInterface{
 	Scene sceneLogin, sceneMain, scenePlay, 
 		  sceneViewStats, sceneViewPlayers, 
 		  sceneViewCards, sceneViewRules, sceneViewShop, sceneIndividualCard; 
+	
+	private static Player playerLogged = new Player();
+	
+	public static Player getPlayerLogged() {
+		return playerLogged;
+	}
+
+	public static void setPlayerLogged(Player playerLogged) {
+		Main.playerLogged = playerLogged;
+	}
 
 	public static void main(String[] args) {
 		launch(args);
@@ -111,6 +121,7 @@ public class Main extends Application implements GameInterface{
 				if(Utils.validateUser(userTextField.getText(), pwBox.getText()))// FIXME
 					if(true){
 						actiontarget.setText("Correct!");
+						playerLogged=Utils.GetUser(userTextField.getText());
 						primaryStage.setScene(sceneMain);
 					}
 					else{

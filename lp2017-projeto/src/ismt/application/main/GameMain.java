@@ -1,7 +1,7 @@
 package ismt.application.main;
 
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -9,29 +9,30 @@ import java.util.TimerTask;
 public class GameMain {
 	public final static int MANA_MAX = 10;
 	private Timer timer;
-	private int tmpJogo;
+	private int gameTime;
 	private int mana;
 	private int manaTime;
 	private ArrayList<Card> deck;
 	private Card nextCard;
 	private Card[] cardsInGame;
-	Player player = new Player();
-
 	
+	Player player = new Player();
+	Random random = new Random();
+
 	public GameMain(){
-		tmpJogo = 180;
+		gameTime = 180;
 		mana = 5;
 		manaTime = 6; //aumenta uma mana a cada 6 segundos
 	}
 	
-	public void timer() {
-		tmpJogo --; 
+	public void timeCountdown() {
+		gameTime --; 
 
-	    int minutes = tmpJogo / 60;
-	    int seconds = tmpJogo % 60;
+	    int minutes = gameTime / 60;
+	    int seconds = gameTime % 60;
 	    System.out.println(minutes + ":" + seconds);
 	    
-	    if (tmpJogo==0){
+	    if (gameTime==0){
 	    	System.out.println("Jogo acabou");
 	    	timer.cancel();	   
 	    }
@@ -39,7 +40,6 @@ public class GameMain {
 	}
 	
 	public void manaRegen() {
-
 		if (mana == MANA_MAX){
 			return;
 		}
@@ -57,14 +57,11 @@ public class GameMain {
 		
 	}
 	
-
 	private void simulatePlay() {
 		
 		if (Math.random()>0.8){
-			System.out.println("Qual carta a jogar de 1 a 4?");
-			Scanner sc = new Scanner(System.in);
-			int i = sc.nextInt() - 1;
-			playCard(i);
+			int rd = random.nextInt(3);
+			playCard(rd);
 		}
 		
 	}	
@@ -77,15 +74,17 @@ public class GameMain {
 		int neededMana = Integer.parseInt(played.getCost());
 		
 		if (mana<neededMana){
-			System.out.println("Não possui Mana suficiente");
+			System.out.println("Não possui Mana suficiente para " + played.getName());
 			return;
 		}
 		
 		mana -= neededMana;		
 		cardsInGame[cardIndex] = deck.remove(0);		
-		deck.add(played);		
-		System.out.println("Carta jogada: " + played.getName());				
-		nextCard = deck.get(0); 
+		deck.add(played); //adiciona a carta removida novamente ao deck		
+		System.out.println("Carta jogada: " + played.getName());	
+		
+		int rd = random.nextInt(3);
+		nextCard = deck.get(rd); 
 		
 		showCards();
 		
@@ -93,32 +92,33 @@ public class GameMain {
 
 	public void start() {
 		
-		player = Utils.GetUser("root");
-		deck = player.getDeck();
+		deck = Main.getPlayerLogged().getDeck();
 		
 		timer = new Timer();
 	
 		timer.schedule(new TimerTask() {
 										@Override
 										public void run() {
-											timer();
+											timeCountdown();
 											manaRegen();
 											simulatePlay();
 										} 
 										}, 1000, 1000);
 		
 		cardsInGame = new Card[4];
+		int rd = random.nextInt(3);
 		for (int i = 0; i < 4; i++) {
-			cardsInGame[i] = deck.remove(0);			
+			cardsInGame[i] = deck.remove(rd); //remove as cartas no deck que estao em jogo
 		}	
 		
 		nextCard = deck.get(0); 	
 		
-		
+	
 		showCards();
 	}
 
 	private void showCards() {
+		System.out.println("");
 		System.out.println("Cartas em jogo: ");
 		for (int i = 0; i < cardsInGame.length; i++) {
 			System.out.println((i+1)+"-" + cardsInGame[i].getName() + "(" + cardsInGame[i].getCost() + ")");
