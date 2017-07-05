@@ -6,8 +6,10 @@ public class Rules {
 	private String name;
 	private String summary;
 	private String strategy;
+	private String number;
 
-	public RulesCategory getCategory() {
+
+public RulesCategory getCategory() {
 		return category;
 	}
 	public void setCategory(RulesCategory category) {
@@ -25,10 +27,16 @@ public class Rules {
 	public void setSummary(String summary) {
 		this.summary = summary;
 	}
-	public String getStrategy() {
-		return strategy;
+	
+	public String getNumber() {
+		return number;
 	}
-	public void setStrategy(String strategy) {
-		this.strategy = strategy;
+	
+	public void setNumber(String number) {
+		this.number = number;
+	
 	}
+	
 }
+
+
