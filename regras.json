@@ -1,0 +1,160 @@
+{
+    "Crown Towers":[
+ {
+        "name": "Arena Towers",
+        "summary": "Each player has a pair of Arena Towers on their respective side of the map, each on the left and right side of the King’s Tower.
+Each Arena Tower is 3 tiles from the side of the Arena and 4 tiles from the back (the Arena is 18 tiles wide, 36 tiles long).
+Destroying an opposing Arena Tower awards you a Crown, and grants you territory which cards can be cast upon.",
+        "strategy": "",
+        "number": ""
+    },
+{
+"name": "King's Tower",
+        "summary": "Each player has a 4×4 King Tower, located at the center back of their side of the map, 1 tile from the back.
+Destroying it automatically grants the player who destroys it 3 Crowns and ends the game.",
+        "strategy": "",
+        "number": ""
+}
+],
+    "Troop Cards": {
+        "Common": [
+            {
+                "name": "Skeleton Barrel",
+                "summary": "The Skeleton Barrel is a flying, building-targeting troop that drops skeletons once it is destroyed or reaches a building. It can only damage buildings once, similar to the Battle Ram.
+The Skeleton Barrel costs 3 Elixir to deploy.",
+                "strategy": "",
+                "number": ""
+            },
+            {
+                "name": "Elite Barbarians",
+                "summary": "The Elite Barbarians are unlocked from the Royal Arena (Arena 7).
+It spawns two faster and stronger Barbarians.
+An Elite Barbarians card costs 6 Elixir to deploy.",
+                "strategy": "Compared to the regular Barbarians, they have higher stats and much more capabilities. However, they only come in 1 pair, while the Barbarians comes in 2 pairs. In total, they do less damage than regular Barbarians and are less effective for defending.",
+                "number": ""
+            }
+        ],
+        "Rare": [
+            {
+                "name": "Flying Machine",
+                "summary": "The Flying Machine is a single-target flying, ranged troop with moderate hitpoints and damage output.
+The Flying Machine costs 4 Elixir to deploy.",
+                "strategy": "",
+                "number": 
+            },
+            {
+                "name": "Ice Golem",
+                "summary": "The Ice Golem is unlocked from the Frozen Peak (Arena 8).
+It is a building-targeting, melee troop with moderate hitpoints and low damage that deals small death damage when defeated.",
+                "strategy": "A simple strategy is to put the Ice Golem in front of a Hog Rider as the Arena Towers and any other troops will target the Ice Golem, giving the Hog Rider more time to deal damage and it will also slow defending units",
+                "number": 
+            }
+        ],
+            {
+                "name": "ice-wizard",
+                "type": "Troop",
+                "cost": "3",
+                "rarity": "Legendary",
+                "level": 1
+            },
+            {
+                "name": "cannon",
+                "type": "Building",
+                "cost": "3",
+                "rarity": "Common",
+                "level": 3
+            },
+            {
+                "name": "barbarian-hut",
+                "type": "Building",
+                "cost": "7",
+                "rarity": "Rare",
+                "level": 3
+            },
+            {
+                "name": "ice-spirit",
+                "type": "Troop",
+                "cost": "1",
+                "rarity": "Common",
+                "level": 11
+            }
+        ],
+        "allcards": [
+            {
+                "name": "royal-giant",
+                "type": "Troop",
+                "cost": "6",
+                "rarity": "Rare",
+                "level": 2
+            },
+            {
+                "name": "barbarian-hut",
+                "type": "Building",
+                "cost": "7",
+                "rarity": "Rare",
+                "level": 3
+            },
+            {
+                "name": "minion-horde",
+                "type": "Troop",
+                "cost": "5",
+                "rarity": "Common",
+                "level": 2
+            },
+            {
+                "name": "princess",
+                "type": "Troop",
+                "cost": "3",
+                "rarity": "Legendary",
+                "level": 3
+            },
+            {
+                "name": "ice-wizard",
+                "type": "Troop",
+                "cost": "3",
+                "rarity": "Legendary",
+                "level": 1
+            },
+            {
+                "name": "golem",
+                "type": "Troop",
+                "cost": "8",
+                "rarity": "Epic",
+                "level": 1
+            },
+            {
+                "name": "wizard",
+                "type": "Troop",
+                "cost": "5",
+                "rarity": "Rare",
+                "level": 6
+            },
+            {
+                "name": "cannon",
+                "type": "Building",
+                "cost": "3",
+                "rarity": "Common",
+                "level": 3
+            },
+            {
+                "name": "barbarian-hut",
+                "type": "Building",
+                "cost": "7",
+                "rarity": "Rare",
+                "level": 3
+            },
+            {
+                "name": "ice-spirit",
+                "type": "Troop",
+                "cost": "1",
+                "rarity": "Common",
+                "level": 11
+            }
+            
+        ],
+        "password": "root",
+        "money": "1100",
+        "level": "8",
+        "points": "2302"
+    }
+}
